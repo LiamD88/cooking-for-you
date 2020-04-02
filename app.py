@@ -1,7 +1,17 @@
-import os
+import os 
 from flask import Flask
+from flask_pymongo import PyMongo
+from os import path
+if path.exists("env.py"):
+    import env
 
-app = Flask(__name__)
+app = Flask(__name__) 
+
+MONGODB_URI = os.getenv("MONGO_URI")
+DBS_NAME = "NewRecipes"
+COLLECTION_NAME = "Recipes"
+
+mongo = PyMongo(app)
 
 
 
