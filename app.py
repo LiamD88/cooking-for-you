@@ -1,5 +1,5 @@
 import os 
-from flask import Flask
+from flask import Flask, render_template
 from flask_pymongo import PyMongo
 from os import path
 if path.exists("env.py"):
@@ -7,11 +7,22 @@ if path.exists("env.py"):
 
 app = Flask(__name__) 
 
-MONGODB_URI = os.getenv("MONGO_URI")
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 DBS_NAME = "NewRecipes"
 COLLECTION_NAME = "Recipes"
 
 mongo = PyMongo(app)
+
+
+@app.route('/index')
+def home_page():
+    return render_template("base.html")
+
+@app.route('/')
+@app.route('/recipe')
+def recipe_page():
+    return render_template("recipes.html")
+
 
 
 
