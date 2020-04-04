@@ -13,12 +13,12 @@ COLLECTION_NAME = "Recipes"
 
 mongo = PyMongo(app)
 
-@app.route('/')
+
 @app.route('/index')
 def home_page():
     return render_template("index.html")
 
-
+@app.route('/')
 @app.route('/recipe')
 def recipe_page():
     return render_template("recipes.html")
