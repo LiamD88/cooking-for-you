@@ -18,10 +18,16 @@ mongo = PyMongo(app)
 def home_page():
     return render_template("index.html")
 
-@app.route('/')
+
 @app.route('/recipe')
 def recipe_page():
     return render_template("recipes.html")
+
+
+@app.route('/')
+@app.route('/login')
+def login_page():
+    return render_template("login.html")
 
 
 
