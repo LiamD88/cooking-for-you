@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="width: 18rem;">
+                <img src="/static/images/meat-link.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Meat</p>
+                </div>
+            </div>
+        </div>
+
+    <div class="col-md-6">
+        <form>
+            <div class="form-group">
+              <label for="formGroupExampleInput">Category</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Name</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Ingredients</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">How To Cook</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Additional Notes</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+              </div>
+          </form>
+    </div>
+
+    </div>
+
+
+{% endblock %}

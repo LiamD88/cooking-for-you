@@ -24,10 +24,16 @@ def recipe_page():
     return render_template("recipes.html")
 
 
-@app.route('/')
+
 @app.route('/login')
 def login_page():
     return render_template("login.html")
+
+
+@app.route('/')
+@app.route('/ingredients')
+def ingredients_page():
+    return render_template("ingredients.html")
 
 
 
