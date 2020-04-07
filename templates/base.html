@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <title>Cooking For You</title>
 </head>
 
@@ -14,10 +14,8 @@
 
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="">
-      <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top"
-        alt="">
-      Logo
-    </a>
+      <img src="/static/images/logo.png" width="50" height="50" class="d-inline-block align-top"
+        alt=""></a>
     <button class="btn btn-sm btn-outline-secondary ml-auto" type="button">Recipes</button>
     <div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
         type="button">Search</button>
