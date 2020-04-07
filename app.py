@@ -13,7 +13,7 @@ COLLECTION_NAME = "Recipes"
 
 mongo = PyMongo(app)
 
-
+@app.route('/')
 @app.route('/index')
 def home_page():
     return render_template("index.html")
@@ -30,7 +30,7 @@ def login_page():
     return render_template("login.html")
 
 
-@app.route('/')
+
 @app.route('/ingredients')
 def ingredients_page():
     return render_template("ingredients.html")
