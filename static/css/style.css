@@ -1,5 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Dancing+Script:wght@600&display=swap': 500");
+
 .home-images {
 padding-top: 15px;
 
 }
 
+
+.home-text {
+    font-family: 'Dancing Script', cursive;
+}
+
+.home-text-2{
+    padding-top: 10px;
+    font-size: 25px;
+}
