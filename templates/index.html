@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="container">
+<section>
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <div id="carouselExampleSlidesOnly" class="carousel image-size slide carousel-fade" data-ride="carousel">
@@ -22,40 +22,42 @@
     </div>
   </div>
 
-
+</section>
+<section>
   <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3 home-images">
-      <div class="card">
-        <img src="/static/images/meat-link.jpg" class="card-img-top" alt="...">
+    <div class="row">
+      <div class="col-sm-3 home-images">
+        <div class="card">
+          <img src="/static/images/meat-link.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="text-center"><a href="#" class="badge-pill badge-primary">Meat</a></div>
       </div>
-      <div class="text-center"><a href="#" class="badge-pill badge-primary">Meat</a></div>
-    </div>
-    <div class="col-sm-3 home-images">
-      <div class="card">
-        <img src="/static/images/poultry-link.jpg" class="card-img-top" alt="...">
+      <div class="col-sm-3 home-images">
+        <div class="card">
+          <img src="/static/images/poultry-link.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="text-center"><a href="#" class="badge-pill badge-primary">Poultry</a></div>
       </div>
-      <div class="text-center"><a href="#" class="badge-pill badge-primary">Poultry</a></div>
-    </div>
-    <div class="col-sm-3 home-images">
-      <div class="card">
-        <img src="/static/images/pasta-link.jpg" class="card-img-top" alt="...">
+      <div class="col-sm-3 home-images">
+        <div class="card">
+          <img src="/static/images/pasta-link.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="text-center"><a href="#" class="badge-pill badge-primary">Pasta</a></div>
       </div>
-      <div class="text-center"><a href="#" class="badge-pill badge-primary">Pasta</a></div>
-    </div>
-    <div class="col-sm-3 home-images">
-      <div class="card">
-        <img src="/static/images/vegetarian-link.jpg" class="card-img-top" alt="...">
+      <div class="col-sm-3 home-images">
+        <div class="card">
+          <img src="/static/images/vegetarian-link.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="text-center"><a href="#" class="badge-pill badge-primary">Vegetarian</a></div>
       </div>
-      <div class="text-center"><a href="#" class="badge-pill badge-primary">Vegetarian</a></div>
     </div>
-  </div>
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <p class="text-center home-text home-text-2">You might find at home, you do all the cooking, but come and cook with us and you will
+        <p class="text-center home-text home-text-2">You might find at home, you do all the cooking, but come and cook
+          with us and you will
           see we can do the</p>
       </div>
     </div>
@@ -65,5 +67,6 @@
       </div>
     </div>
   </div>
+</section>
 
 {% endblock %}
