@@ -13,13 +13,13 @@
 <body>
 
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="">
+    <a class="navbar-brand" href="{{ url_for('home_page') }}">
       <img src="/static/images/logo.png" width="50" height="50" class="d-inline-block align-top" alt=""></a>
-    <button class="btn btn-sm btn-outline-secondary ml-auto" type="button">Recipes</button>
+    <a class="btn btn-sm btn-outline-secondary ml-auto" type="button" href="{{ url_for('recipe_page') }}">Recipes</button></a>
     <div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
         type="button">Search</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a></div>
-      <button class="btn btn-sm btn-outline-secondary" type="button">Login/Register</button>
+      <a class="btn btn-sm btn-outline-secondary" type="button" href="{{ url_for('login_page') }}">Login/Register</button></a>
   </nav>
 
 
