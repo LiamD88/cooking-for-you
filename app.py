@@ -1,6 +1,7 @@
 import os 
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
     import env
@@ -13,7 +14,7 @@ COLLECTION_NAME = "Recipes"
 
 mongo = PyMongo(app)
 
-@app.route('/')
+
 @app.route('/index')
 def home_page():
     return render_template("index.html")
@@ -24,7 +25,7 @@ def recipe_page():
     return render_template("recipes.html")
 
 
-
+@app.route('/')
 @app.route('/login')
 def login_page():
     return render_template("login.html")
@@ -34,7 +35,6 @@ def login_page():
 @app.route('/ingredients')
 def ingredients_page():
     return render_template("ingredients.html")
-
 
 
 

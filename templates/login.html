@@ -2,39 +2,50 @@
 
 {% block content %}
 
+<div class="container-fluid"><div class="row">
+   <div class="col-12">
+      <p class="login-text">Register for our monthly newsletter and 
+         receive the latest in new recipes from
+         all our users.
+      </p>
+   </div>
+</div></div>
 
-<p>Register for our monthly newsletter and 
-   receive the latest in new recipes from
-   all our users.
-</p>
 
 
 <div class="container">
    <div class="row">
       <div class="col-12">
-         <div class="container">
-            <div class="row">
-               <div class="col-12">
-                  <form id="myForm" onsubmit="return sendForm(this);">
-                     <div class="form-group">
-                        <label for="exampleFormControlInput1" class="text-white">Full Name</label>
-                        <input type="text" class="form-control w-50" id="fullname" placeholder="First/Last Name">
-                     </div>
-                     <div class="form-group">
-                        <label for="exampleFormControlInput1" class="text-white">Date Of Birth</label>
-                        <input type="text" class="form-control w-50" id="dateofbirth" placeholder="DD/MM/YY">
-                     </div>
-                     <div class="form-group">
-                        <label for="exampleFormControlInput1" class="text-white">Email address</label>
-                        <input type="email" class="form-control w-50" id="emailaddress" placeholder="name@example.com">
-                     </div>
-                     <div class="form-group w-100">
-                        <label for="exampleFormControlTextarea1" class="text-white">Further Info / Future Destination Requests</label>
-                        <textarea class="form-control w-50" id="furtherinfo" rows="3"></textarea>
-                     </div>
-                     <button type="submit" class="btn1 btn-primary" data-toggle="modal" data-target="#myModal" class="close"
-                        data-dismiss="modal" onclick="this.form.reset()">Submit</button>
-                  </form>
+                  <form>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-2">Checkbox</div>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Confirm
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </div>
+</form>
                </div>
             </div>
       </div>
