@@ -30,25 +30,25 @@
         <div class="card">
           <img src="{{ url_for('static', filename='images/meat-link.jpg') }}" class="card-img-top" alt="...">
         </div>
-        <div class="text-center"><a href="#" class="badge-pill badge-primary">Meat</a></div>
+        <div class="text-center"><a href="{{ url_for('meat_ingredients') }}" class="badge-pill badge-primary">Meat</a></div>
       </div>
       <div class="col-sm-3 home-images">
         <div class="card">
           <img src="{{ url_for('static', filename='images/poultry-link.jpg') }}" class="card-img-top" alt="...">
         </div>
-        <div class="text-center"><a href="#" class="badge-pill badge-primary">Poultry</a></div>
+        <div class="text-center"><a href="{{ url_for('poultry_ingredients') }}" class="badge-pill badge-primary">Poultry</a></div>
       </div>
       <div class="col-sm-3 home-images">
         <div class="card">
           <img src="{{ url_for('static', filename='images/pasta-link.jpg') }}" class="card-img-top" alt="...">
         </div>
-        <div class="text-center"><a href="#" class="badge-pill badge-primary">Pasta</a></div>
+        <div class="text-center"><a href="{{ url_for('pasta_ingredients') }}" class="badge-pill badge-primary">Pasta</a></div>
       </div>
       <div class="col-sm-3 home-images">
         <div class="card">
           <img src="{{ url_for('static', filename='images/vegetarian-link.jpg') }}" class="card-img-top" alt="...">
         </div>
-        <div class="text-center"><a href="#" class="badge-pill badge-primary">Vegetarian</a></div>
+        <div class="text-center"><a href="{{ url_for('vegetarian_ingredients') }}" class="badge-pill badge-primary">Vegetarian</a></div>
       </div>
     </div>
   </div>
