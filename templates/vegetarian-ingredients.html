@@ -3,16 +3,14 @@
 {% block content %}
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card" style="width: 18rem;">
-                <img src="/static/images/meat-link.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Meat</p>
-                </div>
+<div class="container">    
+       <div class="row">
+          <div class="col-md-6 home-images">
+            <div class="card">
+              <img src="{{ url_for('static', filename='images/vegetarian-link.jpg')}}" class="card-img-top" alt="...">
             </div>
-        </div>
+          </div>
+       
 
     <div class="col-md-6">
         <form>
@@ -38,7 +36,7 @@
               </div>
           </form>
     </div>
-
+  </div>
     </div>
 
 
