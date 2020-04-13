@@ -14,7 +14,7 @@ COLLECTION_NAME = "Recipes"
 
 mongo = PyMongo(app)
 
-
+@app.route('/')
 @app.route('/index')
 def home_page():
     return render_template("index.html")
@@ -25,16 +25,28 @@ def recipe_page():
     return render_template("recipes.html")
 
 
-@app.route('/')
+
 @app.route('/login')
 def login_page():
     return render_template("login.html")
 
 
 
-@app.route('/ingredients')
-def ingredients_page():
-    return render_template("ingredients.html")
+@app.route('/meat-ingredients')
+def meat_ingredients():
+    return render_template("meat-ingredients.html")
+
+@app.route('/poultry-ingredients')
+def poultry_ingredients():
+    return render_template("poultry-ingredients.html")
+
+@app.route('/pasta-ingredients')
+def pasta_ingredients():
+    return render_template("pasta-ingredients.html")
+
+@app.route('/vegetarian-ingredients')
+def vegetarian_ingredients():
+    return render_template("vegetarian-ingredients.html")
 
 
 
