@@ -9,6 +9,11 @@ class RegisterForm(Form):
     confirm_password = PasswordField('Confirm Password', [validators.DataRequired(), validators.length(min=5, max=20)], validators.Equalto('password', message = "Passwords must match."))
 
 
+class LoginForm(Form):
+    username = Stringfield('Username', [validators.DataRequired()])
+    email = Stringfield('Email', [validators.DataRequired()])
+    password = PasswordField('Password', [validators.DataRequired()])
+    confirm_password = PasswordField('Confirm Password', [validators.DataRequired()])
 
 
 
