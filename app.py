@@ -1,7 +1,9 @@
 import os 
-from flask import Flask, render_template, url_for, redirect, request, session, logging
+from flask import Flask, render_template, url_for, redirect, request, session, logging, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from forms import RegisterForm, LoginForm
+import bcrypt
 from os import path
 if path.exists("env.py"):
     import env
@@ -10,9 +12,10 @@ app = Flask(__name__)
 
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["SECRET_KEY"] = os.environ.get["SECRET KEY"]
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
 
 @app.route('/')
 @app.route('/index')
@@ -29,6 +32,28 @@ def recipe_page():
 @app.route('/login')
 def login_page():
     return render_template("login.html")
+
+@app.route('/register', methods=['GET', 'POST'])
+def register_page():
+    
+    register_form = RegisterForm()
+
+    if request.method == 'POST':
+        users = mongo.db.users
+        current_user = users.find_one({'username': request.form['username']})
+        
+        if current_user is None:
+            hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
+            users.insert_one({'name' : register_form.name.data, 'password' : hashpass})
+            users.insert_one({'username' : register_form.username.data, 'password' : hashpass})
+            users.insert_one({'email' : register_form.email.data, 'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('home_page'))
+        else:
+            flash('This Username Already Exists!')
+
+    return render_template('register.html')
+
 
 
 
