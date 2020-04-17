@@ -31,6 +31,10 @@ def recipe_page():
 
 @app.route('/login')
 def login_page():
+
+
+
+
     return render_template("login.html")
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -51,6 +55,7 @@ def register_page():
             return redirect(url_for('home_page'))
         else:
             flash('This Username Already Exists!')
+            return redirect(url_for('register_page'))
 
     return render_template('register.html')
 
