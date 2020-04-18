@@ -70,6 +70,23 @@ def register_page():
     return render_template("register.html")
 
 
+@app.route('/meat-recipes')
+def meat_recipes():
+    return render_template("meat-recipes.html")
+    
+@app.route('/poultry-recipes')
+def poultry_recipes():
+    return render_template("poultry-recipes.html")
+
+@app.route('/pasta-recipes')
+def pasta_recipes():
+    return render_template("pasta-recipes.html")
+
+@app.route('/vegetarian-recipes')
+def vegetarian_recipes():
+    return render_template("vegetarian-recipes.html")
+
+
 
 
 @app.route('/meat-ingredients')
