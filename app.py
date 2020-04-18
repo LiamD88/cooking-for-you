@@ -15,7 +15,7 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-
+users = mongo.db.users
 
 @app.route('/')
 @app.route('/index')
@@ -35,7 +35,6 @@ def login_page():
     LoginForm()
 
     if request.method == 'POST':
-        users = mongo.db.users
     
         login_users = users.find_one({'username' : request.form['username']})
 
@@ -55,7 +54,6 @@ def register_page():
     register_form = RegisterForm()
 
     if request.method == 'POST':
-        users = mongo.db.users
         current_user = users.find_one({'username' : request.form['username']})
         
         if current_user is None:
