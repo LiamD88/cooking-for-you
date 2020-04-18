@@ -16,6 +16,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 users = mongo.db.users
+recipes = mongo.db.recipes
 
 @app.route('/')
 @app.route('/index')
@@ -32,7 +33,7 @@ def recipe_page():
         'how_to_cook' : request.form.get('how_to_cook'),
         'additional_notes' : request.form.get('additional_notes')
     }
-    mongo.db.recipes.insert_one(create_recipe)
+    recipes.insert_one(create_recipe)
     flash('Congratulations, you have added a recipe!')
     return render_template("recipes.html", )
 
