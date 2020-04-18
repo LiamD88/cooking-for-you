@@ -58,9 +58,7 @@ def register_page():
         
         if current_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            users.insert_one({'name' : register_form.name.data, 'password' : hashpass})
-            users.insert_one({'username' : register_form.username.data, 'password' : hashpass})
-            users.insert_one({'email' : register_form.email.data, 'password' : hashpass})
+            users.insert_one({'name' : register_form.name.data, 'username' : register_form.username.data, 'email' : register_form.email.data, 'password' : hashpass})
             session['username'] = request.form['username']
             return redirect(url_for('home_page'))
         else:
