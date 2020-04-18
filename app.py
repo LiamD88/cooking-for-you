@@ -29,11 +29,23 @@ def recipe_page():
 
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login_page():
+    
+    LoginForm()
 
+    if request.method == 'POST':
+        users = mongo.db.users
+    
+        login_users = users.find_one({'username' : request.form['username']})
 
+        if login_users:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_users['password'].encode('utf-8')) == login_users['password'].encode('utf-8'):
+                session['username'] = request.form['username']
+                return redirect(url_for("home_page"))
 
+        flash('Login Details Incorrect')
+        return redirect(url_for("login_page"))
 
     return render_template("login.html")
 
@@ -44,7 +56,7 @@ def register_page():
 
     if request.method == 'POST':
         users = mongo.db.users
-        current_user = users.find_one({'username': request.form['username']})
+        current_user = users.find_one({'username' : request.form['username']})
         
         if current_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
@@ -55,9 +67,9 @@ def register_page():
             return redirect(url_for('home_page'))
         else:
             flash('This Username Already Exists!')
-            return redirect(url_for('register_page'))
+            return redirect(url_for("register_page"))
 
-    return render_template('register.html')
+    return render_template("register.html")
 
 
 
