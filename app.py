@@ -23,8 +23,17 @@ def home_page():
     return render_template("index.html")
 
 
-@app.route('/recipe')
+@app.route('/recipe', methods=['GET', 'POST'])
 def recipe_page():
+    create_recipe = {
+        'category' : request.form.get('category'),
+        'name' : request.form.get('name'),
+        'ingredients' : request.form.get('ingredients'),
+        'how_to_cook' : request.form.get('how_to_cook'),
+        'additional_notes' : request.form.get('additional_notes')
+    }
+    mongo.db.recipes.insert_one(create_recipe)
+    flash('Congratulations, you have added a recipe!')
     return render_template("recipes.html", )
 
 
