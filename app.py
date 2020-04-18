@@ -29,7 +29,7 @@ def recipe_page():
 
 
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login_page():
     
     LoginForm()
