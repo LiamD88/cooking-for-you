@@ -35,7 +35,7 @@ def recipe_page():
     }
     recipes.insert_one(create_recipe)
     flash('Congratulations, you have added a recipe!')
-    return render_template("recipes.html", )
+    return render_template("recipes.html")
 
 
 
@@ -78,9 +78,17 @@ def register_page():
     return render_template("register.html")
 
 
-@app.route('/meat-recipes')
+
+
+@app.route('/meat-recipes', methods=['GET', 'POST'])
 def meat_recipes():
-    return render_template("meat-recipes.html")
+      meat = recipes.find({"category": "meat"})
+
+      return render_template("meat-recipes.html", recipes=meat)
+
+
+
+    
     
 @app.route('/poultry-recipes')
 def poultry_recipes():
