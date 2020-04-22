@@ -1,8 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} <!--This allows me to extend the base.html to this page-->
 
-{% block content %}
+{% block content %} <!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
 
-<div class="container-fluid">
+<div class="container-fluid"> <!--Text at top of page-->
   <div class="row">
     <div class="col-12">
       <p class="login-text">Register for our monthly newsletter and
@@ -15,28 +15,28 @@
 
 
 
-<div class="container">
+<div class="container"> <!--registration form-->
   <div class="row">
     <div class="col-md-6">
       <form method=POST action="">
         <div class="form-group">
           <label for="exampleInputEmail1">Name</label>
           <input type="text" class="form-control" name="name" placeholder="Name">
-      </div>
+        </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
-            <input type="text" class="form-control" name="username" placeholder="Username">
+          <label for="exampleInputEmail1">Username</label>
+          <input type="text" class="form-control" name="username" placeholder="Username">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
           <input type="email" class="form-control" name="email" placeholder="Email">
-      </div>
+        </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" name="password" placeholder="Password">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
         <button type="submit" class="btn btn-primary btn-block">Register</button>
-    </form>
+      </form>
     </div>
   </div>
 </div>

@@ -1,76 +1,79 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} <!--This allows me to extend the base.html to this page-->
 
-{% block content %}
+{% block content %} <!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
 
 
 
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-3 home-images">
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/meat-link.jpg') }}" class="card-img-top" alt="...">
-        </div>
-        <div class="text-center"><a href="{{ url_for('meat_recipes') }}" class="badge-pill badge-primary">Meat</a></div>
+<div class="container-fluid"> <!--This is the image for each recipe section with clickable links-->
+  <div class="row">
+    <div class="col-sm-3 home-images">
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/meat-link.jpg') }}" class="card-img-top" alt="...">
       </div>
-      <div class="col-sm-3 home-images">
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/poultry-link.jpg') }}" class="card-img-top" alt="...">
-        </div>
-        <div class="text-center"><a href="{{ url_for('poultry_recipes') }}" class="badge-pill badge-primary">Poultry</a></div>
+      <div class="text-center"><a href="{{ url_for('meat_recipes') }}" class="badge-pill badge-primary">Meat</a></div>
+    </div>
+    <div class="col-sm-3 home-images">
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/poultry-link.jpg') }}" class="card-img-top" alt="...">
       </div>
-      <div class="col-sm-3 home-images">
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/pasta-link.jpg') }}" class="card-img-top" alt="...">
-        </div>
-        <div class="text-center"><a href="{{ url_for('pasta_recipes') }}" class="badge-pill badge-primary">Pasta</a></div>
+      <div class="text-center"><a href="{{ url_for('poultry_recipes') }}" class="badge-pill badge-primary">Poultry</a>
       </div>
-      <div class="col-sm-3 home-images">
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/vegetarian-link.jpg') }}" class="card-img-top" alt="...">
-        </div>
-        <div class="text-center"><a href="{{ url_for('vegetarian_recipes') }}" class="badge-pill badge-primary">Vegetarian</a></div>
+    </div>
+    <div class="col-sm-3 home-images">
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/pasta-link.jpg') }}" class="card-img-top" alt="...">
       </div>
+      <div class="text-center"><a href="{{ url_for('pasta_recipes') }}" class="badge-pill badge-primary">Pasta</a></div>
+    </div>
+    <div class="col-sm-3 home-images">
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/vegetarian-link.jpg') }}" class="card-img-top" alt="...">
+      </div>
+      <div class="text-center"><a href="{{ url_for('vegetarian_recipes') }}"
+          class="badge-pill badge-primary">Vegetarian</a></div>
     </div>
   </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="h3">Add your own recipes below</div>
-        </div>
-    </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-          <form method=POST action="{{url_for('recipe_page')}}">
-               <div class="col-auto my-1 form-group">
-                  <label for="formGroupExampleInput2">Category</label>
-                  <input type="text" class="form-control" name="category" placeholder="Another input placeholder">
-                </div>
-                <div class="col-auto my-1 form-group">
-                  <label for="formGroupExampleInput2">Name</label>
-                  <input type="text" class="form-control" name="name" placeholder="Another input placeholder">
-                </div>
-                <div class="col-auto my-1 form-group">
-                    <label for="formGroupExampleInput">Ingredients</label>
-                    <input type="text" class="form-control" name="ingredients" placeholder="Example input placeholder">
-                  </div>
-                  <div class="col-auto my-1 form-group">
-                    <label for="formGroupExampleInput2">How To Cook</label>
-                    <input type="text" class="form-control" name="how_to_cook" placeholder="Another input placeholder">
-                  </div>
-                  <div class="col-auto my-1 form-group">
-                    <label for="formGroupExampleInput2">Additional Notes</label>
-                    <input type="text" class="form-control" name="additional_notes" placeholder="Another input placeholder">
-                  </div>
-                  <div class="col-auto my-1"> <button type="submit" class="col-auto my-1 btn btn-primary btn-block">Submit</button>
-                  </div>
-                 
-              </form>
-        </div>
+<div class="container"> <!--Text for adding recipes below-->
+  <div class="row">
+    <div class="col-12">
+      <div class="h3">Add your own recipes below</div>
     </div>
+  </div>
+</div>
+
+<div class="container"> <!--Form to insert your recipes-->
+  <div class="row">
+    <div class="col-12">
+      <form method=POST action="{{url_for('recipe_page')}}">
+        <div class="col-auto my-1 form-group">
+          <label for="formGroupExampleInput2">Category</label>
+          <input type="text" class="form-control" name="category" placeholder="Another input placeholder">
+        </div>
+        <div class="col-auto my-1 form-group">
+          <label for="formGroupExampleInput2">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Another input placeholder">
+        </div>
+        <div class="col-auto my-1 form-group">
+          <label for="formGroupExampleInput">Ingredients</label>
+          <input type="text" class="form-control" name="ingredients" placeholder="Example input placeholder">
+        </div>
+        <div class="col-auto my-1 form-group">
+          <label for="formGroupExampleInput2">How To Cook</label>
+          <input type="text" class="form-control" name="how_to_cook" placeholder="Another input placeholder">
+        </div>
+        <div class="col-auto my-1 form-group">
+          <label for="formGroupExampleInput2">Additional Notes</label>
+          <input type="text" class="form-control" name="additional_notes" placeholder="Another input placeholder">
+        </div>
+        <div class="col-auto my-1"> <button type="submit"
+            class="col-auto my-1 btn btn-primary btn-block">Submit</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
 </div>
 
 

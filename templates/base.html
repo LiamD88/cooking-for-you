@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> <!--This is the head which contains links for bootstrap, fontawesome and css-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -11,23 +11,25 @@
 </head>
 
 <body>
-
+        <!--This is the navbar at the top of the page-->
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="{{ url_for('home_page') }}">
       <img src="/static/images/logo.png" width="50" height="50" class="d-inline-block align-top" alt=""></a>
-    <a class="btn btn-sm btn-outline-secondary ml-auto" type="button" href="{{ url_for('recipe_page') }}">Recipes</button></a>
+    <a class="btn btn-sm btn-outline-secondary ml-auto" type="button"
+      href="{{ url_for('recipe_page') }}">Recipes</button></a>
     <div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
         type="button">Search</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a></div>
       <a class="btn btn-sm btn-outline-secondary" type="button" href="{{ url_for('login_page') }}">Login</button></a>
-      <a class="btn btn-sm btn-outline-secondary" type="button" href="{{ url_for('register_page') }}">Register</button></a>
+      <a class="btn btn-sm btn-outline-secondary" type="button"
+        href="{{ url_for('register_page') }}">Register</button></a>
   </nav>
 
-
+<!--Jinja templating to allow me to extend my base.html-->
   {% block content %}
   {% endblock %}
 
-
+<!--footer at the bottom of the page-->
   <div class="footer">
     <div class="container-fluid">
       <div class="row">
@@ -62,7 +64,7 @@
       </div>
     </div>
   </div>
-
+<!--jquery scripts to use in conjunction with bootstrap it allows bootstrap to use javascript functions-->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
