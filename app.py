@@ -15,18 +15,23 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-users = mongo.db.users
+users = mongo.db.users   
 recipes = mongo.db.recipes
 
-@app.route('/')
+# Main Pages
+
+@app.route('/') #This is routing for the home page
 @app.route('/index')
 def home_page():
     return render_template("index.html")
 
 
-@app.route('/recipe', methods=['GET', 'POST'])
-def recipe_page():
-    create_recipe = {
+@app.route('/recipe', methods=['GET', 'POST'])   #Routing for recipe page 
+def recipe_page():   
+    """this function allows the user to insert the recipe into the mongodb database
+        and will flash a message when succesful"""
+
+    create_recipe = {                       
         'category' : request.form.get('category'),
         'name' : request.form.get('name'),
         'ingredients' : request.form.get('ingredients'),
@@ -39,9 +44,12 @@ def recipe_page():
 
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])  #routing for the log in page 
 def login_page():
-    
+    """ This function allows a user to log into the site with a username and unhashing of the password 
+        If corrrect they are redirected to the home page, if incorrect a message will flash and redirect
+        to the login page """    
+
     LoginForm()
 
     if request.method == 'POST':
@@ -58,9 +66,14 @@ def login_page():
 
     return render_template("login.html")
 
-@app.route('/register', methods=['GET', 'POST'])
+
+
+@app.route('/register', methods=['GET', 'POST']) # Routing for register page
 def register_page():
-    
+    """ This function allows the user to register details and they will get saved to the mongodb database
+        the password they enter will be hashed to offer more security, when succesful a session is logged 
+        and returned to the home page. If unsuccesful they will be flashed a message and redirected to the register page"""
+
     register_form = RegisterForm()
 
     if request.method == 'POST':
@@ -78,46 +91,62 @@ def register_page():
     return render_template("register.html")
 
 
+#  Recipe pages 
 
-
-@app.route('/meat-recipes', methods=['GET', 'POST'])
+@app.route('/meat-recipes', methods=['GET', 'POST']) # Routing for the meat recipes page
 def meat_recipes():
-      meats = recipes.find({"category": "meat"})
+    """ This function will search for the meat category in my mongodb database and render the results to be 
+        displayed in my html page"""
 
-      return render_template("meat-recipes.html", meats=meats)
+    meats = recipes.find({'category': 'meat'})
+
+    return render_template("meat-recipes.html", meats=meats)
 
 
-
-    
-    
-@app.route('/poultry-recipes')
-def poultry_recipes():
-    return render_template("poultry-recipes.html")
-
-@app.route('/pasta-recipes')
+@app.route('/pasta-recipes', methods=['GET', 'POST']) # Routing for the pasta recipes page
 def pasta_recipes():
-    return render_template("pasta-recipes.html")
+    """ This function will search for the pasta category in my mongodb database and render the results to be 
+        displayed in my html page"""
 
-@app.route('/vegetarian-recipes')
+    pastas = recipes.find({'category': 'pasta'})
+
+    return render_template("pasta-recipes.html", pastas=pastas)
+
+
+@app.route('/poultry-recipes', methods=['GET', 'POST']) # Routing for the poultry recipes page
+def poultry_recipes():
+    """ This function will search for the poultry category in my mongodb database and render the results to be 
+        displayed in my html page"""
+    poultrys = recipes.find({'category': "poultry"})
+
+    return render_template("poultry-recipes.html", poultrys=poultrys)
+
+
+@app.route('/vegetarian-recipes', methods=['GET', 'POST']) # Routing for the vegatarian recipes page
 def vegetarian_recipes():
-    return render_template("vegetarian-recipes.html")
+    """ This function will search for the vegetarian category in my mongodb database and render the results to be 
+        displayed in my html page"""
+    vegetarians = recipes.find({'category': 'vegetarian'})
+
+    return render_template("vegetarian-recipes.html", vegetarians=vegetarians)
 
 
 
+# Ingredients Pages 
 
-@app.route('/meat-ingredients')
+@app.route('/meat-ingredients') # Routing for my meat ingredients page
 def meat_ingredients():
     return render_template("meat-ingredients.html")
 
-@app.route('/poultry-ingredients')
+@app.route('/poultry-ingredients') # routing for my poultry ingredients page
 def poultry_ingredients():
     return render_template("poultry-ingredients.html")
 
-@app.route('/pasta-ingredients')
+@app.route('/pasta-ingredients') # Routing for my pasta ingredients page
 def pasta_ingredients():
     return render_template("pasta-ingredients.html")
 
-@app.route('/vegetarian-ingredients')
+@app.route('/vegetarian-ingredients') # Routing for my vegetarian ingredients page
 def vegetarian_ingredients():
     return render_template("vegetarian-ingredients.html")
 
