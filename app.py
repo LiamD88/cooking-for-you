@@ -82,9 +82,9 @@ def register_page():
 
 @app.route('/meat-recipes', methods=['GET', 'POST'])
 def meat_recipes():
-      meat = recipes.find({"category": "meat"})
+      meats = recipes.find({"category": "meat"})
 
-      return render_template("meat-recipes.html", recipes=meat)
+      return render_template("meat-recipes.html", meats=meats)
 
 
 
