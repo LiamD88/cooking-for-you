@@ -8,16 +8,17 @@
 
 <div class="container">
   <!--containter to display items for the moment this will change-->
-  <div class="row">
     <div class="col-12">
-      <div class="h1">{{ meat['category'] }}</div>
-      <p>{{ meat['name'] }}</p>
-      <p>{{ meat['ingredients'] }}</p>
-      <p>{{ meat['how_to_cook'] }}</p>
-      <p>{{ meat['additional_notes'] }}</p>
-    </div>
-  </div>
-</div>
+      <div class="jumbotron img">
+        <h1 class="display-4"> {{ meat['name'] }}</h1>
+        <hr class="my-4">
+        <p>Inside is a delightful recipe for {{ meat['name'] }}, you can even make adjustments if you like!</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Click For Recipe!</a>
+      </div>
+        </div>
+      </div>
+  
+ 
 
 
 {% endfor %}
