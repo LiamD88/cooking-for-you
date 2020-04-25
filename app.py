@@ -35,7 +35,7 @@ def recipe_page():
         'category' : request.form.get('category'),
         'name' : request.form.get('name'),
         'ingredients' : request.form.get('ingredients'),
-        'how_to_cook' : request.form.get('how_to_cook')),
+        'how_to_cook' : request.form.get('how_to_cook'),
         'additional_notes' : request.form.get('additional_notes')
     }
     recipes.insert_one(create_recipe)
@@ -101,7 +101,7 @@ def meat_recipes():
 
     meats = recipes.find({'category': 'meat'})
 
-    return render_template("meat-recipes.html", meats=meats)
+    return render_template("meat-recipes.html", meats=meats, recipe=recipes)
 
 
 @app.route('/pasta-recipes', methods=['GET', 'POST']) # Routing for the pasta recipes page
@@ -138,9 +138,12 @@ def vegetarian_recipes():
 @app.route('/meat-ingredients/<recipe_id>') # Routing for my meat ingredients page
 def meat_ingredients(recipe_id):
 
-    details = recipes.find_one({'_id': ObjectId(recipe_id)})
+    recipe = recipes.find_one({'_id': ObjectId(recipe_id)})
 
-    return render_template("meat-ingredients.html", details=details)
+    return render_template("meat-ingredients.html", recipes=recipe)
+
+
+
 
 @app.route('/poultry-ingredients') # routing for my poultry ingredients page
 def poultry_ingredients():
