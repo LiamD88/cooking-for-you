@@ -13,7 +13,7 @@
         <h1 class="display-4"> {{ meat['name'] }}</h1>
         <hr class="my-4">
         <p>Inside is a delightful recipe for {{ meat['name'] }}, you can even make adjustments if you like!</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Click For Recipe!</a>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('meat_ingredients', recipe_id=recipe._id) }}" role="button">Click For Recipe!</a>
       </div>
         </div>
       </div>
