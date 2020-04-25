@@ -32,11 +32,11 @@ def recipe_page():
         and will flash a message when succesful"""
 
     create_recipe = {                       
-        'category' : request.form.get('category').lower(),
-        'name' : request.form.get('name').lower(),
-        'ingredients' : request.form.get('ingredients').lower(),
-        'how_to_cook' : request.form.get('how_to_cook').lower(),
-        'additional_notes' : request.form.get('additional_notes').lower()
+        'category' : request.form.get('category'),
+        'name' : request.form.get('name'),
+        'ingredients' : request.form.get('ingredients'),
+        'how_to_cook' : request.form.get('how_to_cook')),
+        'additional_notes' : request.form.get('additional_notes')
     }
     recipes.insert_one(create_recipe)
     flash('Congratulations, you have added a recipe!')
@@ -135,9 +135,12 @@ def vegetarian_recipes():
 
 # Ingredients Pages 
 
-@app.route('/meat-ingredients') # Routing for my meat ingredients page
-def meat_ingredients():
-    return render_template("meat-ingredients.html")
+@app.route('/meat-ingredients/<recipe_id>') # Routing for my meat ingredients page
+def meat_ingredients(recipe_id):
+
+    details = recipes.find_one({'_id': ObjectId(recipe_id)})
+
+    return render_template("meat-ingredients.html", details=details)
 
 @app.route('/poultry-ingredients') # routing for my poultry ingredients page
 def poultry_ingredients():
