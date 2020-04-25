@@ -32,11 +32,11 @@ def recipe_page():
         and will flash a message when succesful"""
 
     create_recipe = {                       
-        'category' : request.form.get('category'),
-        'name' : request.form.get('name'),
-        'ingredients' : request.form.get('ingredients'),
-        'how_to_cook' : request.form.get('how_to_cook'),
-        'additional_notes' : request.form.get('additional_notes')
+        'category' : request.form.get('category').lower(),
+        'name' : request.form.get('name').lower(),
+        'ingredients' : request.form.get('ingredients').lower(),
+        'how_to_cook' : request.form.get('how_to_cook').lower(),
+        'additional_notes' : request.form.get('additional_notes').lower()
     }
     recipes.insert_one(create_recipe)
     flash('Congratulations, you have added a recipe!')
@@ -83,11 +83,12 @@ def register_page():
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
             users.insert_one({'name' : register_form.name.data, 'username' : register_form.username.data, 'email' : register_form.email.data, 'password' : hashpass})
             session['username'] = request.form['username']
+            flash('Congratulations, you have registered.', 'success')
             return redirect(url_for('home_page'))
         else:
-            flash('This Username Already Exists!')
+            flash('This Username Already Exists!', 'error')
             return redirect(url_for("register_page"))
-
+    
     return render_template("register.html")
 
 
