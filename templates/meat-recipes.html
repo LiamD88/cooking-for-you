@@ -7,17 +7,18 @@
 {% for meat in meats %} <!--for loop to allow me to iterate through the items in my mongodb database-->
 
 <div class="container">
-  <!--containter to display items for the moment this will change-->
+  <div class="row">  <!--containter to display items for the moment this will change-->
     <div class="col-12">
       <div class="jumbotron img">
         <h1 class="display-4"> {{ meat['name'] }}</h1>
         <hr class="my-4">
         <p>Inside is a delightful recipe for {{ meat['name'] }}, you can even make adjustments if you like!</p>
-        <a class="btn btn-primary btn-lg" href="" role="button">Click For Recipe!</a>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('meat_ingredients', recipe_id=recipe._id) }}" role="button">Click For Recipe!</a>
       </div>
         </div>
       </div>
-  
+    </div>
+
  
 
 
