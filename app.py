@@ -101,7 +101,7 @@ def meat_recipes():
 
     meats = recipes.find({'category': 'meat'})
 
-    return render_template("meat-recipes.html", meats=meats, recipe=recipes)
+    return render_template("meat-recipes.html", meats=meats)
 
 
 @app.route('/pasta-recipes', methods=['GET', 'POST']) # Routing for the pasta recipes page
