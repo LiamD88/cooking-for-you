@@ -3,8 +3,18 @@
 
 {% block content %} <!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
 
-  
 
+
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+            <p>{{ recipes.name }}</p>
+            <p>{{ recipes.ingredients }}</p> 
+            <p>{{ recipes.how_to_cook }}</p>
+            <p>{{ recipes.additional_notes }}</p>
+          </div>
+      </div>
+  </div>
 
 
 {% endblock %}
