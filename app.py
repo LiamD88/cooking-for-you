@@ -111,7 +111,7 @@ def pasta_recipes():
 
     pastas = recipes.find({'category': 'pasta'})
 
-    return render_template("pasta-recipes.html", pastas=pastas)
+    return render_template("pasta-recipes.html", pastas=pastas, recipe=recipes.find())
 
 
 @app.route('/poultry-recipes', methods=['GET', 'POST']) # Routing for the poultry recipes page
@@ -120,7 +120,7 @@ def poultry_recipes():
         displayed in my html page"""
     poultrys = recipes.find({'category': "poultry"})
 
-    return render_template("poultry-recipes.html", poultrys=poultrys)
+    return render_template("poultry-recipes.html", poultrys=poultrys, recipe=recipes.find())
 
 
 @app.route('/vegetarian-recipes', methods=['GET', 'POST']) # Routing for the vegatarian recipes page
@@ -129,16 +129,15 @@ def vegetarian_recipes():
         displayed in my html page"""
     vegetarians = recipes.find({'category': 'vegetarian'})
 
-    return render_template("vegetarian-recipes.html", vegetarians=vegetarians)
+    return render_template("vegetarian-recipes.html", vegetarians=vegetarians, recipe=recipes.find())
 
 
 
 # Ingredients Pages 
 
-@app.route('/meat-ingredients/<meat_id>', methods=['GET']) # Routing for my meat ingredients page
+@app.route('/meat-ingredients/<meat_id>') # Routing for my meat ingredients page
 def meat_ingredients(meat_id):
-    
-    
+
     recipe = recipes.find_one({'_id': ObjectId(meat_id)})
 
 
@@ -147,17 +146,26 @@ def meat_ingredients(meat_id):
 
 
 
-@app.route('/poultry-ingredients') # routing for my poultry ingredients page
-def poultry_ingredients():
-    return render_template("poultry-ingredients.html")
+@app.route('/poultry-ingredients/<poultry_id>') # routing for my poultry ingredients page
+def poultry_ingredients(poultry_id):
 
-@app.route('/pasta-ingredients') # Routing for my pasta ingredients page
-def pasta_ingredients():
-    return render_template("pasta-ingredients.html")
+    recipe = recipes.find_one({'_id': ObjectId(poultry_id)})
 
-@app.route('/vegetarian-ingredients') # Routing for my vegetarian ingredients page
-def vegetarian_ingredients():
-    return render_template("vegetarian-ingredients.html")
+    return render_template("poultry-ingredients.html", recipes=recipe)
+
+@app.route('/pasta-ingredients/<pasta_id>') # Routing for my pasta ingredients page
+def pasta_ingredients(pasta_id):
+
+    recipe = recipes.find_one({'_id': ObjectId(pasta_id)})
+
+    return render_template("pasta-ingredients.html", recipes=recipe)
+
+@app.route('/vegetarian-ingredients/<vegetarian_id>') # Routing for my vegetarian ingredients page
+def vegetarian_ingredients(vegetarian_id):
+
+    recipe = recipes.find_one({'_id': ObjectId(vegetarian_id)})
+
+    return render_template("vegetarian-ingredients.html", recipes=recipe)
 
 
 
