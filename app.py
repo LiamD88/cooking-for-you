@@ -135,10 +135,13 @@ def vegetarian_recipes():
 
 # Ingredients Pages 
 
-@app.route('/meat-ingredients/<recipe_id>') # Routing for my meat ingredients page
-def meat_ingredients(recipe_id):
+@app.route('/meat-ingredients/<meat_id>', methods=['GET']) # Routing for my meat ingredients page
+def meat_ingredients(meat_id):
+    
+    
+    recipe = recipes.find_one({'_id': ObjectId(meat_id)})
 
-    recipe = recipes.find_one({'_id': ObjectId(recipe_id)})
+
     return render_template("meat-ingredients.html", recipes=recipe)
 
 
