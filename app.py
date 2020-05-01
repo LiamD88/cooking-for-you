@@ -151,7 +151,7 @@ def poultry_ingredients(poultry_id):
 
     poultry = ({'_id': ObjectId(poultry_id)})
 
-    return render_template("poultry-ingredients.html", recipes=recipe, poulty=poultry)
+    return render_template("poultry-ingredients.html", recipes=recipe, poultry=poultry)
 
 @app.route('/pasta-ingredients/<pasta_id>') # Routing for my pasta ingredients page
 def pasta_ingredients(pasta_id):
@@ -192,7 +192,7 @@ def edit_recipe_meat(meat_id):
 
     meat = ({'_id': ObjectId(meat_id)})
 
-    return render_template("edit-recipe.html", meat=meat)
+    return render_template("edit-recipe-meat.html", meat=meat)
 
 @app.route('/edit-recipe/<poultry_id>', methods=['GET', 'POST']) # routing to edit poultry recipes
 def edit_recipe_poultry(poultry_id):
@@ -212,7 +212,7 @@ def edit_recipe_poultry(poultry_id):
 
     poultry = ({'_id': ObjectId(poultry_id)})
 
-    return render_template("edit-recipe.html", poultry=poultry)
+    return render_template("edit-recipe-poultry.html", poultry=poultry)
 
 @app.route('/edit-recipe/<pasta_id>', methods=['GET', 'POST']) # routing to edit pasta recipes
 def edit_recipe_pasta(pasta_id):
@@ -232,7 +232,7 @@ def edit_recipe_pasta(pasta_id):
 
     pasta = ({'_id': ObjectId(pasta_id)})
 
-    return render_template("edit-recipe.html", pasta=pasta)
+    return render_template("edit-recipe-pasta.html", pasta=pasta)
 
 
 @app.route('/edit-recipe/<vegetarian_id>', methods=['GET', 'POST']) # routing to edit vegetarian recipes
@@ -253,7 +253,7 @@ def edit_recipe_vegetarian(vegetarian_id):
 
     vegetarian = ({'_id': ObjectId(vegetarian_id)})
 
-    return render_template("edit-recipe.html", vegetarian=vegetarian)
+    return render_template("edit-recipe-vegetarian.html", vegetarian=vegetarian)
 
 
 
