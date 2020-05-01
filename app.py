@@ -141,10 +141,7 @@ def meat_ingredients(meat_id):
     recipe = recipes.find_one({'_id': ObjectId(meat_id)})
 
 
-    return render_template("meat-ingredients.html", recipes=recipe)
-
-
-
+    return render_template("meat-ingredients.html", recipes=recipe, recipe=recipes)
 
 @app.route('/poultry-ingredients/<poultry_id>') # routing for my poultry ingredients page
 def poultry_ingredients(poultry_id):
@@ -166,6 +163,26 @@ def vegetarian_ingredients(vegetarian_id):
     recipe = recipes.find_one({'_id': ObjectId(vegetarian_id)})
 
     return render_template("vegetarian-ingredients.html", recipes=recipe)
+
+
+# Edit Pages
+
+@app.route('/edit-meat/<recipe_id>', methods=['GET', 'POST']) # routing to edit recipes
+def edit_recipe(recipe_id):
+
+    if request.method == "POST":
+        recipes.update_one({'_id': ObjectId(recipe_id)}),
+    {'$set':
+        {                       
+        'category' : request.form.get('category'),
+        'name' : request.form.get('name'),
+        'ingredients' : request.form.get('ingredients'),
+        'how_to_cook' : request.form.get('how_to_cook'),
+        'additional_notes' : request.form.get('additional_notes')
+        }
+    }
+    return render_template("edit-recipe.html", recipe=recipes)
+
 
 
 
