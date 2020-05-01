@@ -259,14 +259,49 @@ def edit_recipe_vegetarian(vegetarian_id):
 
 # Delete Pages
 
-@app.route('/delete-recipe/<recipe_id>', methods=['GET', 'POST'])
-def delete_recipe(recipe_id):
+@app.route('/delete-recipe/<meat_id>', methods=['GET', 'POST'])
+def delete_recipe_meat(meat_id):
 
     if request.method == "POST":
-        recipes.delete_one({'_id': ObjectId(recipe_id)})
-    
-    return render_template("recipes.html", recipe=recipes)
+        recipes.delete_one({'_id': ObjectId(meat_id)})
+        redirect(url_for("recipe_page"))
 
+    meat = ({'_id': ObjectId(meat_id)})
+    
+    return render_template("delete-recipe-meat.html", meat=meat, recipes=recipes)
+    
+@app.route('/delete-recipe/<poultry_id>', methods=['GET', 'POST'])
+def delete_recipe_poultry(poultry_id):
+
+    if request.method == "POST":
+        recipes.delete_one({'_id': ObjectId(poultry_id)})
+        redirect(url_for("recipe_page"))
+
+    poultry = ({'_id': ObjectId(poultry_id)})
+    
+    return render_template("delete-recipe-meat.html", poultry=poultry, recipes=recipes)
+
+@app.route('/delete-recipe/<pasta_id>', methods=['GET', 'POST'])
+def delete_recipe_pasta(pasta_id):
+
+    if request.method == "POST":
+        recipes.delete_one({'_id': ObjectId(pasta_id)})
+        redirect(url_for("recipe_page"))
+
+    pasta = ({'_id': ObjectId(pasta_id)})
+    
+    return render_template("delete-recipe-meat.html", pasta=pasta, recipes=recipes)
+
+@app.route('/delete-recipe/<vegetarian_id>', methods=['GET', 'POST'])
+def delete_recipe_vegetarian(vegetarian_id):
+
+    if request.method == "POST":
+        recipes.delete_one({'_id': ObjectId(vegetarian_id)})
+        redirect(url_for("recipe_page"))
+
+    vegetarian = ({'_id': ObjectId(vegetarian_id)})
+    
+    return render_template("delete-recipe-meat.html", vegetarian=vegetarian, recipes=recipes)
 
 
 if __name__ == '__main__':
