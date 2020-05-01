@@ -28,11 +28,15 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-12">
+  
+    <a class="btn btn-primary btn-lg" href="{{ url_for('edit_recipe_pasta', pasta_id=pasta._id) }}" role="button">Edit!</a>
+  </div>
+
+  <a class="btn btn-primary btn-lg" href="{{ url_for('delete_recipe_pasta', pasta_id=pasta._id) }}" role="button">Delete!</a>
+</div>
 
 {% endblock %}
 
 
-p></p>
-            <p>{{ recipes.ingredients }}</p> 
-            <p>{{ recipes.how_to_cook }}</p>
-            <p>{{ recipes.additional_notes }}</p>

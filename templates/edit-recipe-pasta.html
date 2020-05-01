@@ -1,0 +1,45 @@
+{% extends 'base.html' %} <!--This allows me to extend the base.html to this page-->
+
+
+{% block content %} 
+
+
+<div class="container"> <!--Form to insert your recipes-->
+    <div class="row">
+      <div class="col-12">
+        <form method="POST" action="{{url_for('edit_recipe_pasta', pasta_id=pasta._id)}}">
+          <div class="col-auto my-1 form-group">
+            <label for="formGroupExampleInput2">Category</label>
+            <input type="text" class="form-control" name="category" placeholder="Another input placeholder">
+          </div>
+          <div class="col-auto my-1 form-group">
+            <label for="formGroupExampleInput2">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Another input placeholder">
+          </div>
+          <div class="col-auto my-1 form-group">
+            <label for="formGroupExampleInput">Ingredients</label>
+            <input type="text" class="form-control" name="ingredients" placeholder="Example input placeholder">
+          </div>
+          <div class="col-auto my-1 form-group">
+            <label for="formGroupExampleInput2">How To Cook</label>
+            <input type="text" class="form-control" name="how_to_cook" placeholder="Another input placeholder">
+          </div>
+          <div class="col-auto my-1 form-group">
+            <label for="formGroupExampleInput2">Additional Notes</label>
+            <input type="text" class="form-control" name="additional_notes" placeholder="Another input placeholder">
+          </div>
+          <div class="col-auto my-1"> <button type="submit"
+              class="col-auto my-1 btn btn-primary btn-block">Submit</button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}
+
+
