@@ -36,7 +36,8 @@ def recipe_page():
         'name' : request.form.get('name'),
         'ingredients' : request.form.get('ingredients'),
         'how_to_cook' : request.form.get('how_to_cook'),
-        'additional_notes' : request.form.get('additional_notes')
+        'additional_notes' : request.form.get('additional_notes'),
+        'image' : request.form.get('image')
     }
     recipes.insert_one(create_recipe)
     flash('Congratulations, you have added a recipe!')
@@ -57,7 +58,7 @@ def login_page():
         login_users = users.find_one({'username' : request.form['username']})
 
         if login_users:
-            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_users['password'].encode('utf-8')) == login_users['password'].encode('utf-8'):
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_users['password']) == login_users['password']:
                 session['username'] = request.form['username']
                 return redirect(url_for("home_page"))
 
@@ -259,7 +260,7 @@ def edit_recipe_vegetarian(vegetarian_id):
 
 # Delete Pages
 
-@app.route('/delete-recipe/<meat_id>', methods=['GET', 'POST'])
+@app.route('/delete-recipe/<meat_id>', methods=['GET', 'POST']) # Routing for delete meat recipes
 def delete_recipe_meat(meat_id):
 
     if request.method == "POST":
@@ -270,7 +271,7 @@ def delete_recipe_meat(meat_id):
     
     return render_template("delete-recipe-meat.html", meat=meat, recipes=recipes)
     
-@app.route('/delete-recipe/<poultry_id>', methods=['GET', 'POST'])
+@app.route('/delete-recipe/<poultry_id>', methods=['GET', 'POST']) # Routing for delete poultry recipes
 def delete_recipe_poultry(poultry_id):
 
     if request.method == "POST":
@@ -281,7 +282,7 @@ def delete_recipe_poultry(poultry_id):
     
     return render_template("delete-recipe-meat.html", poultry=poultry, recipes=recipes)
 
-@app.route('/delete-recipe/<pasta_id>', methods=['GET', 'POST'])
+@app.route('/delete-recipe/<pasta_id>', methods=['GET', 'POST']) # Routing for delete pasta recipes
 def delete_recipe_pasta(pasta_id):
 
     if request.method == "POST":
@@ -292,7 +293,7 @@ def delete_recipe_pasta(pasta_id):
     
     return render_template("delete-recipe-meat.html", pasta=pasta, recipes=recipes)
 
-@app.route('/delete-recipe/<vegetarian_id>', methods=['GET', 'POST'])
+@app.route('/delete-recipe/<vegetarian_id>', methods=['GET', 'POST']) # Routing for delete vegetarian recipes
 def delete_recipe_vegetarian(vegetarian_id):
 
     if request.method == "POST":
