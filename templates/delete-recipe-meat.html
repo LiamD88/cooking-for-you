@@ -1,0 +1,27 @@
+{% extends 'base.html' %} <!--This allows me to extend the base.html to this page-->
+
+
+{% block content %} <!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
+
+<div class="container"> <!--Form to insert your recipes-->
+    <div class="row">
+      <div class="col-12">
+        <form method="POST" action="{{url_for('delete_recipe_meat', meat_id=meat._id)}}">
+       
+          <div class="col-auto my-1 form-group">
+            <label for="formGroupExampleInput2">Name</label>
+
+          </div>
+    
+          <div class="col-auto my-1"> <button type="submit"
+              class="col-auto my-1 btn btn-primary btn-block">Submit</button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+

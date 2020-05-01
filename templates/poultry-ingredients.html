@@ -33,8 +33,7 @@
     
       <a class="btn btn-primary btn-lg" href="{{ url_for('edit_recipe_poultry', poultry_id=poultry._id) }}" role="button">Edit!</a>
     </div>
-  
-    <a class="btn btn-primary btn-lg" href="{{ url_for('delete_recipe_poultry', poultry_id=recipe._id) }}" role="button">Delete!</a>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('delete_recipe_poultry', poultry_id=poultry._id) }}" role="button">Delete!</a>
   </div>
 
 {% endblock %}
