@@ -140,39 +140,46 @@ def meat_ingredients(meat_id):
 
     recipe = recipes.find_one({'_id': ObjectId(meat_id)})
 
+    meat = ({'_id': ObjectId(meat_id)})
 
-    return render_template("meat-ingredients.html", recipes=recipe, recipe=recipes)
+    return render_template("meat-ingredients.html", recipes=recipe, recipe=recipes, meat=meat)
 
 @app.route('/poultry-ingredients/<poultry_id>') # routing for my poultry ingredients page
 def poultry_ingredients(poultry_id):
 
     recipe = recipes.find_one({'_id': ObjectId(poultry_id)})
 
-    return render_template("poultry-ingredients.html", recipes=recipe)
+    poultry = ({'_id': ObjectId(poultry_id)})
+
+    return render_template("poultry-ingredients.html", recipes=recipe, poulty=poultry)
 
 @app.route('/pasta-ingredients/<pasta_id>') # Routing for my pasta ingredients page
 def pasta_ingredients(pasta_id):
 
     recipe = recipes.find_one({'_id': ObjectId(pasta_id)})
 
-    return render_template("pasta-ingredients.html", recipes=recipe)
+    pasta = ({'_id': ObjectId(pasta_id)})
+
+    return render_template("pasta-ingredients.html", recipes=recipe, pasta=pasta)
 
 @app.route('/vegetarian-ingredients/<vegetarian_id>') # Routing for my vegetarian ingredients page
 def vegetarian_ingredients(vegetarian_id):
 
     recipe = recipes.find_one({'_id': ObjectId(vegetarian_id)})
 
-    return render_template("vegetarian-ingredients.html", recipes=recipe)
+    vegetarian = ({'_id': ObjectId(vegetarian_id)})
+
+    return render_template("vegetarian-ingredients.html", recipes=recipe, vegetarian=vegetarian)
 
 
 # Edit Pages
 
-@app.route('/edit-recipe/<recipe_id>', methods=['GET', 'POST']) # routing to edit recipes
-def edit_recipe(recipe_id):
+@app.route('/edit-recipe/<meat_id>', methods=['GET', 'POST']) # routing to edit meat recipes
+def edit_recipe_meat(meat_id):
     
-  
+
     if request.method == "POST":
-        recipes.update_one({'_id': ObjectId(recipe_id)},
+        recipes.find_one_and_update({'_id': ObjectId(meat_id)},
         {'$set':
         {                       
         'category' : request.form.get('category'),
@@ -182,7 +189,72 @@ def edit_recipe(recipe_id):
         'additional_notes' : request.form.get('additional_notes')
         }
         })
-    return render_template("edit-recipe.html")
+
+    meat = ({'_id': ObjectId(meat_id)})
+
+    return render_template("edit-recipe.html", meat=meat)
+
+@app.route('/edit-recipe/<poultry_id>', methods=['GET', 'POST']) # routing to edit poultry recipes
+def edit_recipe_poultry(poultry_id):
+    
+
+    if request.method == "POST":
+        recipes.find_one_and_update({'_id': ObjectId(poultry_id)},
+        {'$set':
+        {                       
+        'category' : request.form.get('category'),
+        'name' : request.form.get('name'),
+        'ingredients' : request.form.get('ingredients'),
+        'how_to_cook' : request.form.get('how_to_cook'),
+        'additional_notes' : request.form.get('additional_notes')
+        }
+        })
+
+    poultry = ({'_id': ObjectId(poultry_id)})
+
+    return render_template("edit-recipe.html", poultry=poultry)
+
+@app.route('/edit-recipe/<pasta_id>', methods=['GET', 'POST']) # routing to edit pasta recipes
+def edit_recipe_pasta(pasta_id):
+    
+
+    if request.method == "POST":
+        recipes.find_one_and_update({'_id': ObjectId(pasta_id)},
+        {'$set':
+        {                       
+        'category' : request.form.get('category'),
+        'name' : request.form.get('name'),
+        'ingredients' : request.form.get('ingredients'),
+        'how_to_cook' : request.form.get('how_to_cook'),
+        'additional_notes' : request.form.get('additional_notes')
+        }
+        })
+
+    pasta = ({'_id': ObjectId(pasta_id)})
+
+    return render_template("edit-recipe.html", pasta=pasta)
+
+
+@app.route('/edit-recipe/<vegetarian_id>', methods=['GET', 'POST']) # routing to edit vegetarian recipes
+def edit_recipe_vegetarian(vegetarian_id):
+    
+
+    if request.method == "POST":
+        recipes.find_one_and_update({'_id': ObjectId(vegetarian_id)},
+        {'$set':
+        {                       
+        'category' : request.form.get('category'),
+        'name' : request.form.get('name'),
+        'ingredients' : request.form.get('ingredients'),
+        'how_to_cook' : request.form.get('how_to_cook'),
+        'additional_notes' : request.form.get('additional_notes')
+        }
+        })
+
+    vegetarian = ({'_id': ObjectId(vegetarian_id)})
+
+    return render_template("edit-recipe.html", vegetarian=vegetarian)
+
 
 
 # Delete Pages
