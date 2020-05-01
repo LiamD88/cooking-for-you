@@ -8,13 +8,31 @@
   <div class="container">
       <div class="row">
           <div class="col-12">
-            <p>{{ recipes.name }}</p>
-            <p>{{ recipes.ingredients }}</p> 
-            <p>{{ recipes.how_to_cook }}</p>
-            <p>{{ recipes.additional_notes }}</p>
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-4">{{ recipes.name|capitalize }}</h1>
+              </div>
+            </div>
           </div>
       </div>
   </div>
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>Ingredients: {{ recipes.ingredients|capitalize }}</h3>
+      <h3>How To Cook: {{ recipes.how_to_cook|capitalize }}</h3>
+      <h3>Addiotional Notes: {{ recipes.additional_notes|capitalize }}</h3>
+    </div>
+  </div>
+</div>
+
+
 {% endblock %}
+
+
+p></p>
+            <p>{{ recipes.ingredients }}</p> 
+            <p>{{ recipes.how_to_cook }}</p>
+            <p>{{ recipes.additional_notes }}</p>
