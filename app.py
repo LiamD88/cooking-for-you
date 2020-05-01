@@ -167,12 +167,13 @@ def vegetarian_ingredients(vegetarian_id):
 
 # Edit Pages
 
-@app.route('/edit-meat/<recipe_id>', methods=['GET', 'POST']) # routing to edit recipes
+@app.route('/edit-recipe/<recipe_id>', methods=['GET', 'POST']) # routing to edit recipes
 def edit_recipe(recipe_id):
-
+    
+  
     if request.method == "POST":
-        recipes.update_one({'_id': ObjectId(recipe_id)}),
-    {'$set':
+        recipes.update_one({'_id': ObjectId(recipe_id)},
+        {'$set':
         {                       
         'category' : request.form.get('category'),
         'name' : request.form.get('name'),
@@ -180,9 +181,19 @@ def edit_recipe(recipe_id):
         'how_to_cook' : request.form.get('how_to_cook'),
         'additional_notes' : request.form.get('additional_notes')
         }
-    }
-    return render_template("edit-recipe.html", recipe=recipes)
+        })
+    return render_template("edit-recipe.html")
 
+
+# Delete Pages
+
+@app.route('/delete-recipe/<recipe_id>', methods=['GET', 'POST'])
+def delete_recipe(recipe_id):
+
+    if request.method == "POST":
+        recipes.delete_one({'_id': ObjectId(recipe_id)})
+    
+    return render_template("recipes.html", recipe=recipes)
 
 
 
