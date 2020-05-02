@@ -3,15 +3,27 @@
 
 {% block content %} 
 
+<div class="container"> <!--Text for adding recipes below-->
+  
+  <div class="row">
+    <div class="col-12 text-center">
+      <img src="{{ url_for('static', filename='images/chef.jpg') }}" width="250" height="250" class="d-inline-block align-top" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <div class="h3">Edit The Recipe Below</div>
+    </div>
+  </div>
 
-<div class="container"> <!--Form to insert your recipes-->
+<!--Form to insert your recipes-->
     <div class="row">
       <div class="col-12">
         <form method="POST" action="{{url_for('edit_recipe_vegetarian', vegetarian_id=vegetarian._id)}}">
            <div class="col-auto my-1">
           <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
           <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="category">
-            <option selected>Choose...</option>
+            <option selected>Category...</option>
             <option value="meat">Meat</option>
             <option value="poultry">Poultry</option>
             <option value="pasta">Pasta</option>
@@ -20,19 +32,19 @@
         </div>
           <div class="col-auto my-1 form-group">
             <label for="formGroupExampleInput2">Name</label>
-            <input type="text" class="form-control" name="name" placeholder="Another input placeholder">
+            <input type="text" class="form-control" name="name" placeholder="Recipe Name?">
           </div>
           <div class="col-auto my-1 form-group">
             <label for="formGroupExampleInput">Ingredients</label>
-            <input type="text" class="form-control" name="ingredients" placeholder="Example input placeholder">
+            <input type="text" class="form-control" name="ingredients" placeholder="Enter Ingredients">
           </div>
           <div class="col-auto my-1 form-group">
             <label for="formGroupExampleInput2">How To Cook</label>
-            <input type="text" class="form-control" name="how_to_cook" placeholder="Another input placeholder">
+            <input type="text" class="form-control" name="how_to_cook" placeholder="How Do You Cook It?">
           </div>
           <div class="col-auto my-1 form-group">
             <label for="formGroupExampleInput2">Additional Notes</label>
-            <input type="text" class="form-control" name="additional_notes" placeholder="Another input placeholder">
+            <input type="text" class="form-control" name="additional_notes" placeholder="Anything Extra To Add?">
           </div>
           <div class="col-auto my-1"> <button type="submit"
               class="col-auto my-1 btn btn-primary btn-block">Submit</button>
