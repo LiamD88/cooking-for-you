@@ -36,8 +36,7 @@ def recipe_page():
         'name' : request.form.get('name'),
         'ingredients' : request.form.get('ingredients'),
         'how_to_cook' : request.form.get('how_to_cook'),
-        'additional_notes' : request.form.get('additional_notes'),
-        'image' : request.form.get('image')
+        'additional_notes' : request.form.get('additional_notes')
     }
     recipes.insert_one(create_recipe)
     flash('Congratulations, you have added a recipe!')
