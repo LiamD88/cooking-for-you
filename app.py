@@ -39,7 +39,6 @@ def recipe_page():
         'additional_notes' : request.form.get('additional_notes')
     }
     recipes.insert_one(create_recipe)
-    flash('Congratulations, you have added a recipe!')
     return render_template("recipes.html")
 
 
@@ -83,13 +82,13 @@ def register_page():
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
             users.insert_one({'name' : register_form.name.data, 'username' : register_form.username.data, 'email' : register_form.email.data, 'password' : hashpass})
             session['username'] = request.form['username']
-            flash('Congratulations, you have registered.', 'success')
-            return redirect(url_for('home_page'))
+            flash('You are now registered!', 'success')
+            return redirect(url_for('register_page'))
         else:
             flash('This Username Already Exists!', 'error')
             return redirect(url_for("register_page"))
     
-    return render_template("register.html")
+    return render_template("register.html", form=register_form)
 
 
 #  Recipe pages 
