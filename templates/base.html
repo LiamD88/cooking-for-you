@@ -17,9 +17,13 @@
       <img src="/static/images/logo.png" width="50" height="50" class="d-inline-block align-top" alt=""></a>
     <a class="btn btn-sm btn-outline-secondary ml-auto" type="button"
       href="{{ url_for('recipe_page') }}">Recipes</button></a>
+      {% if 'username' in session %}
+      <a class="btn btn-sm btn-outline-secondary" type="button" href="{{ url_for('logout') }}">Logout</button></a>
+      {% else %}
       <a class="btn btn-sm btn-outline-secondary" type="button" href="{{ url_for('login_page') }}">Login</button></a>
       <a class="btn btn-sm btn-outline-secondary" type="button"
         href="{{ url_for('register_page') }}">Register</button></a>
+        {% endif %}
   </nav>
 
 <!--Jinja templating to allow me to extend my base.html-->
