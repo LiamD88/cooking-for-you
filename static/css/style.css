@@ -28,6 +28,15 @@
   background-color: #e9ecef;
 }
 
+/* delete pages */
+
+.return-button {
+  padding-top: 5em;
+}
+
+.delete-button {
+  padding-top: 4em;
+}
 
 
 
@@ -88,3 +97,4 @@
     }
     }
     
+
