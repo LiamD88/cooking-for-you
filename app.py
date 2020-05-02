@@ -91,6 +91,12 @@ def register_page():
     return render_template("register.html", form=register_form)
 
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    
+    return redirect(url_for("home_page"))
+
 #  Recipe pages 
 
 @app.route('/meat-recipes', methods=['GET', 'POST']) # Routing for the meat recipes page
