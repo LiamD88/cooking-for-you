@@ -39,7 +39,7 @@ def recipe_page():
         'additional_notes' : request.form.get('additional_notes')
     }
     recipes.insert_one(create_recipe)
-    return render_template("recipes.html")
+    return render_template("recipes.html", recipe=recipes)
 
 
 
@@ -263,9 +263,12 @@ def delete_recipe_meat(meat_id):
 
     if request.method == "POST":
         recipes.delete_one({'_id': ObjectId(meat_id)})
-        redirect(url_for("recipe_page"))
+        flash('The recipe has been deleted!', 'success')
+    redirect(url_for("recipe_page"))
 
     meat = ({'_id': ObjectId(meat_id)})
+
+    
     
     return render_template("delete-recipe-meat.html", meat=meat, recipes=recipes)
     
@@ -274,7 +277,8 @@ def delete_recipe_poultry(poultry_id):
 
     if request.method == "POST":
         recipes.delete_one({'_id': ObjectId(poultry_id)})
-        redirect(url_for("recipe_page"))
+        flash('The recipe has been deleted!', 'success')
+        
 
     poultry = ({'_id': ObjectId(poultry_id)})
     
@@ -285,7 +289,8 @@ def delete_recipe_pasta(pasta_id):
 
     if request.method == "POST":
         recipes.delete_one({'_id': ObjectId(pasta_id)})
-        redirect(url_for("recipe_page"))
+        flash('The recipe has been deleted!', 'success')
+      
 
     pasta = ({'_id': ObjectId(pasta_id)})
     
@@ -296,7 +301,7 @@ def delete_recipe_vegetarian(vegetarian_id):
 
     if request.method == "POST":
         recipes.delete_one({'_id': ObjectId(vegetarian_id)})
-        redirect(url_for("recipe_page"))
+        flash('The recipe has been deleted!', 'success')
 
     vegetarian = ({'_id': ObjectId(vegetarian_id)})
     
