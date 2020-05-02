@@ -35,12 +35,22 @@
 
  <div class="row">
     <div class="col-12">
-    
+    {% if 'username' in session %}
       <a class="btn btn-primary badge-pill" href="{{ url_for('edit_recipe_poultry', poultry_id=poultry._id) }}" role="button">Edit!</a>
 
     <a class="btn btn-primary badge-pill" href="{{ url_for('delete_recipe_poultry', poultry_id=poultry._id) }}" role="button">Delete!</a>
-  </div>
-</div>
+    {% else %}
+    <button class="btn disabled btn-primary badge-pill">Edit!</button>
+    <button class="btn disabled btn-primary badge-pill">Delete!</button>
+    {% endif %}
+   
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-12 text-center">
+     <h5>Log in to edit or delete a recipe!</h5>
+   </div>
+ </div>
 </div>
 {% endblock %}
 
