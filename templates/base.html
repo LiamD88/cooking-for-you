@@ -14,7 +14,7 @@
         <!--This is the navbar at the top of the page-->
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="{{ url_for('home_page') }}">
-      <img src="/static/images/logo.png" width="50" height="50" class="d-inline-block align-top" alt=""></a>
+      <img src="{{ url_for('static', filename='images/logo.png') }}" width="50" height="50" class="d-inline-block align-top" alt=""></a>
     <a class="btn btn-sm btn-outline-secondary ml-auto" type="button"
       href="{{ url_for('recipe_page') }}">Recipes</button></a>
       {% if 'username' in session %}
