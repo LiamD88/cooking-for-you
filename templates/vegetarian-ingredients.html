@@ -5,34 +5,32 @@
 
 
 
-  <div class="container">
-      <div class="row">
-          <div class="col-12">
-            <div class="jumbotron jumbotron-fluid">
-              <div class="container">
-                <h1 class="display-4 text-center">{{ recipes.name|capitalize }}</h1>
-              </div>
-            </div>
-          </div>
-      </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12 text-center">
-      <img src="{{ url_for('static', filename='images/chef.jpg') }}" width="250" height="250" class="d-inline-block align-top" alt="">
-    </div>
-  </div>
-  
-
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h3>Ingredients: {{ recipes.ingredients|capitalize }}</h3>
-      <h3>How To Cook: {{ recipes.how_to_cook|capitalize }}</h3>
-      <h3>Addiotional Notes: {{ recipes.additional_notes|capitalize }}</h3>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 text-center">{{ recipes.name|capitalize }}</h1>
+        </div>
+      </div>
     </div>
   </div>
 
+<div class="row">
+  <div class="col-12 text-center">
+    <img src="{{ url_for('static', filename='images/chef.jpg') }}" width="250" height="250" class="d-inline-block align-top" alt="">
+  </div>
+</div>
+
+
+  <div class="row">
+    <div class="col-12">
+
+      <h4>Ingredients:</h4><p>{{ recipes.ingredients|capitalize }}</p><br>
+      <h4>How To Cook:</h4><p>{{ recipes.how_to_cook|capitalize }}</p><br>
+      <h4>Additional Notes:</h4><p>{{ recipes.additional_notes|capitalize }}</p>
+    </div>
+  </div>
 
  <div class="row">
     <div class="col-12">
