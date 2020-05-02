@@ -39,7 +39,11 @@
 /* login pages */
 
 .form-pad {
-  padding-top: 3em;
+  padding-top: 5em;
+
+}
+.form-pad-2 {
+  padding-bottom: 5em;
 }
 
 
