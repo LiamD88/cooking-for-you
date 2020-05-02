@@ -48,9 +48,11 @@
  </div>
 </div>
 <div class="row">
- <div class="col-12 text-center">
-   <h5>Log in to edit or delete a recipe!</h5>
- </div>
+  {% if 'username' not in session %}
+  <div class="col-12 text-center">
+    <h5>Log in to edit or delete a recipe!</h5>
+  </div>
+  {% endif %}
 </div>
 </div>
 
