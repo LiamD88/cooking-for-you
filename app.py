@@ -49,7 +49,7 @@ def login_page():
         If corrrect they are redirected to the home page, if incorrect a message will flash and redirect
         to the login page """    
 
-    LoginForm()
+    login_form = LoginForm()
 
     if request.method == 'POST':
     
@@ -63,7 +63,7 @@ def login_page():
         flash('Login Details Incorrect')
         return redirect(url_for("login_page"))
 
-    return render_template("login.html")
+    return render_template("login.html", form=login_form)
 
 
 
