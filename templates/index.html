@@ -8,32 +8,19 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide carousel-fade"
-        data-ride="carousel"
-      >
+      <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner image-size">
           <div class="carousel-item active">
-            <img
-              src="{{ url_for('static', filename='images/carousel-image-1.jpg') }}"
-              class="d-block w-100"
-              alt="..."
-            />
+            <img src="{{ url_for('static', filename='images/carousel-image-1.jpg') }}" class="d-block w-100"
+              alt="..." />
           </div>
           <div class="carousel-item">
-            <img
-              src="{{ url_for('static', filename='images/carousel-image-2.jpg') }}"
-              class="d-block w-100"
-              alt="..."
-            />
+            <img src="{{ url_for('static', filename='images/carousel-image-2.jpg') }}" class="d-block w-100"
+              alt="..." />
           </div>
           <div class="carousel-item">
-            <img
-              src="{{ url_for('static', filename='images/carousel-image-3.jpg') }}"
-              class="d-block w-100"
-              alt="..."
-            />
+            <img src="{{ url_for('static', filename='images/carousel-image-3.jpg') }}" class="d-block w-100"
+              alt="..." />
           </div>
         </div>
       </div>
@@ -46,64 +33,36 @@
   <div class="row">
     <div class="col-sm-3 home-images">
       <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/meat-link.jpg') }}"
-          class="card-img-top"
-          alt="meat-image"
-        />
+        <img src="{{ url_for('static', filename='images/meat-link.jpg') }}" class="card-img-top" alt="meat-image" />
       </div>
       <div class="text-center">
-        <a href="{{ url_for('meat_recipes') }}" class="badge-pill badge-primary"
-          >Meat</a
-        >
+        <a href="{{ url_for('meat_recipes') }}" class="badge-pill badge-primary">Meat</a>
       </div>
     </div>
     <div class="col-sm-3 home-images">
       <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/poultry-link.jpg') }}"
-          class="card-img-top"
-          alt="poultry-image"
-        />
+        <img src="{{ url_for('static', filename='images/poultry-link.jpg') }}" class="card-img-top"
+          alt="poultry-image" />
       </div>
       <div class="text-center">
-        <a
-          href="{{ url_for('poultry_recipes') }}"
-          class="badge-pill badge-primary"
-          >Poultry</a
-        >
+        <a href="{{ url_for('poultry_recipes') }}" class="badge-pill badge-primary">Poultry</a>
       </div>
     </div>
     <div class="col-sm-3 home-images">
       <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/pasta-link.jpg') }}"
-          class="card-img-top"
-          alt="pasta-image"
-        />
+        <img src="{{ url_for('static', filename='images/pasta-link.jpg') }}" class="card-img-top" alt="pasta-image" />
       </div>
       <div class="text-center">
-        <a
-          href="{{ url_for('pasta_recipes') }}"
-          class="badge-pill badge-primary"
-          >Pasta</a
-        >
+        <a href="{{ url_for('pasta_recipes') }}" class="badge-pill badge-primary">Pasta</a>
       </div>
     </div>
     <div class="col-sm-3 home-images">
       <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/vegetarian-link.jpg') }}"
-          class="card-img-top"
-          alt="egetarian-image"
-        />
+        <img src="{{ url_for('static', filename='images/vegetarian-link.jpg') }}" class="card-img-top"
+          alt="egetarian-image" />
       </div>
       <div class="text-center">
-        <a
-          href="{{ url_for('vegetarian_recipes') }}"
-          class="badge-pill badge-primary"
-          >Vegetarian</a
-        >
+        <a href="{{ url_for('vegetarian_recipes') }}" class="badge-pill badge-primary">Vegetarian</a>
       </div>
     </div>
   </div>

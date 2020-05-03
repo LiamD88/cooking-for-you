@@ -9,64 +9,34 @@
   <div class="row">
     <div class="col-sm-3 home-images">
       <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/meat-link.jpg') }}"
-          class="card-img-top"
-          alt="..."
-        />
+        <img src="{{ url_for('static', filename='images/meat-link.jpg') }}" class="card-img-top" alt="..." />
       </div>
       <div class="text-center">
-        <a href="{{ url_for('meat_recipes') }}" class="badge-pill badge-primary"
-          >Meat</a
-        >
+        <a href="{{ url_for('meat_recipes') }}" class="badge-pill badge-primary">Meat</a>
       </div>
     </div>
     <div class="col-sm-3 home-images">
       <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/poultry-link.jpg') }}"
-          class="card-img-top"
-          alt="..."
-        />
+        <img src="{{ url_for('static', filename='images/poultry-link.jpg') }}" class="card-img-top" alt="..." />
       </div>
       <div class="text-center">
-        <a
-          href="{{ url_for('poultry_recipes') }}"
-          class="badge-pill badge-primary"
-          >Poultry</a
-        >
+        <a href="{{ url_for('poultry_recipes') }}" class="badge-pill badge-primary">Poultry</a>
       </div>
     </div>
     <div class="col-sm-3 home-images">
       <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/pasta-link.jpg') }}"
-          class="card-img-top"
-          alt="..."
-        />
+        <img src="{{ url_for('static', filename='images/pasta-link.jpg') }}" class="card-img-top" alt="..." />
       </div>
       <div class="text-center">
-        <a
-          href="{{ url_for('pasta_recipes') }}"
-          class="badge-pill badge-primary"
-          >Pasta</a
-        >
+        <a href="{{ url_for('pasta_recipes') }}" class="badge-pill badge-primary">Pasta</a>
       </div>
     </div>
     <div class="col-sm-3 home-images">
       <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/vegetarian-link.jpg') }}"
-          class="card-img-top"
-          alt="..."
-        />
+        <img src="{{ url_for('static', filename='images/vegetarian-link.jpg') }}" class="card-img-top" alt="..." />
       </div>
       <div class="text-center">
-        <a
-          href="{{ url_for('vegetarian_recipes') }}"
-          class="badge-pill badge-primary"
-          >Vegetarian</a
-        >
+        <a href="{{ url_for('vegetarian_recipes') }}" class="badge-pill badge-primary">Vegetarian</a>
       </div>
     </div>
   </div>
@@ -77,13 +47,8 @@
 
   <div class="row">
     <div class="col-12 text-center">
-      <img
-        src="{{ url_for('static', filename='images/chef.jpg') }}"
-        width="250"
-        height="250"
-        class="d-inline-block align-top"
-        alt="chef-logo"
-      />
+      <img src="{{ url_for('static', filename='images/chef.jpg') }}" width="250" height="250"
+        class="d-inline-block align-top" alt="chef-logo" />
     </div>
   </div>
 
@@ -98,11 +63,7 @@
     <div class="col-12">
       <form method="POST" action="{{url_for('recipe_page')}}">
         <div class="col-auto my-1">
-          <select
-            class="custom-select mr-sm-2"
-            id="inlineFormCustomSelect"
-            name="category"
-          >
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="category">
             <option selected>Category...</option>
             <option value="meat">Meat</option>
             <option value="poultry">Poultry</option>
@@ -112,39 +73,19 @@
         </div>
         <div class="col-auto my-1 form-group">
           <label for="formGroupExampleInput2">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            name="name"
-            placeholder="Recipe Name?"
-          />
+          <input type="text" class="form-control" name="name" placeholder="Recipe Name?" />
         </div>
         <div class="col-auto my-1 form-group">
           <label for="formGroupExampleInput">Ingredients</label>
-          <input
-            type="text"
-            class="form-control"
-            name="ingredients"
-            placeholder="Enter Ingredients"
-          />
+          <input type="text" class="form-control" name="ingredients" placeholder="Enter Ingredients" />
         </div>
         <div class="col-auto my-1 form-group">
           <label for="formGroupExampleInput2">How To Cook</label>
-          <input
-            type="text"
-            class="form-control"
-            name="how_to_cook"
-            placeholder="How Do You Cook It?"
-          />
+          <input type="text" class="form-control" name="how_to_cook" placeholder="How Do You Cook It?" />
         </div>
         <div class="col-auto my-1 form-group">
           <label for="formGroupExampleInput2">Additional Notes</label>
-          <input
-            type="text"
-            class="form-control"
-            name="additional_notes"
-            placeholder="Anything Extra To Add?"
-          />
+          <input type="text" class="form-control" name="additional_notes" placeholder="Anything Extra To Add?" />
         </div>
         {% if 'username' in session %}
         <div class="col-auto my-1">

@@ -9,12 +9,7 @@
       message in messages %}
       <div class="alert alert-primary alert-dismissible fade show" role="alert">
         <span>{{ message }}</span>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="alert"
-          aria-label="Close"
-        >
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -24,13 +19,8 @@
   <!--Form to delete your recipes-->
   <div class="row">
     <div class="col-12 text-center">
-      <img
-        src="{{ url_for('static', filename='images/chef.jpg') }}"
-        width="250"
-        height="250"
-        class="d-inline-block align-top"
-        alt="chef-logo"
-      />
+      <img src="{{ url_for('static', filename='images/chef.jpg') }}" width="250" height="250"
+        class="d-inline-block align-top" alt="chef-logo" />
     </div>
   </div>
   <div class="row">
@@ -46,23 +36,13 @@
   <!--Form to delete your recipes-->
   <div class="row">
     <div class="col-12 text-center">
-      <form
-        method="POST"
-        action="{{url_for('delete_recipe_pasta', pasta_id=pasta._id)}}"
-      >
+      <form method="POST" action="{{url_for('delete_recipe_pasta', pasta_id=pasta._id)}}">
         <div class="col-auto my-1 return-button">
-          <a
-            href="{{ url_for('recipe_page') }}"
-            class="badge-pill badge-primary btn"
-            >Take Me Back To The Recipes</a
-          >
+          <a href="{{ url_for('recipe_page') }}" class="badge-pill badge-primary btn">Take Me Back To The Recipes</a>
         </div>
 
         <div class="col-auto my-1 delete-button">
-          <button
-            type="submit"
-            class="col-auto my-1 btn btn-primary badge-pill"
-          >
+          <button type="submit" class="col-auto my-1 btn btn-primary badge-pill">
             Delete
           </button>
         </div>
