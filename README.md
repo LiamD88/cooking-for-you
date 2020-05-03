@@ -24,7 +24,7 @@ The edit recipes page will keep the same form as the recipes page to make sure t
 
 The delete recipe page again very minimal design, some text to warn the client if they delete the recipe there is no going back, with two buttons. One will bring you back to the recipes page. The other will delete the recipe.
 
-The colour scheme was kept light and minimal as well. A small grey scale for the navbar, the body an footer white, with the social links a grey scale. The brightest thing is the carousel and the jumbotron on the recipe page. 
+The colour scheme was kept light and minimal as well. A small grey scale for the navbar, the body and footer white, with the social links a grey scale. The brightest thing is the carousel and the jumbotron on the recipe page. 
 
 ## User Stories
 ---
@@ -80,7 +80,7 @@ This page has 2 main features, the first is the same chef logo displayed at the 
 The login page has 2 main features, the first being again the same chef logo seen throughout the site. The second is a simple form you fill in to log into the site. The same navbar and social links are available.
 
 ### Register page
-The register page is practically identical to the login page, 2 main feautres. Again the chef logo at the top of the page and a simple form you can use to register for the site. The same navbar and social links are available.
+The register page is practically identical to the login page, 2 main features. Again the chef logo at the top of the page and a simple form you can use to register for the site. The same navbar and social links are available.
 
 ### Future Features
 * The ability to upload photos with your recipes.
