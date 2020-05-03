@@ -38,3 +38,20 @@ The site is designed for the most simple of users to have access to recipes and 
 
 ## Wireframes
 ---
+Below are the links for wireframes, one was created for each device, mobile, tablet and desktop. The search page was initially designed but removed in the end.
+
+* [Home Desktop Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Home%20Page%20Desktop.png)/
+  [Home Ipad Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Home%20Page%20Ipad.png)/
+  [Home Mobile Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Home%20Page%20Mobile.png)
+* [Recipes Desktop Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Recipes%20Page%20Desktop.png)/
+  [Recipes Ipad Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Recipes%20Page%20Ipad.png)/
+  [Recipes Mobile Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Recipes%20Page%20Mobile.png)
+* [Actual Recipe Desktop Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Actual%20Recipe%20To%20Cook%20Desktop.png)/
+  [Actual Recipe Ipad Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Actual%20Recipe%20To%20Cook%20Ipad.png)/
+  [Actual Recipe Mobile Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Actual%20Recipe%20mobile.png)
+* [Login/Register Desktop Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Login_register%20desktop.png)/
+  [Login/Register Ipad Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Login_register%20Ipad.png)/
+  [Login/Register Mobile Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Login_register%20Mobile.png)
+* [Search Desktop Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Search%20Page%20Desktop.png)/
+  [Search Ipad Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Search%20Page%20Ipad.png)/
+  [Search Mobile Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/search%20page%20mobile.png)
