@@ -55,3 +55,18 @@ Below are the links for wireframes, one was created for each device, mobile, tab
 * [Search Desktop Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Search%20Page%20Desktop.png)/
   [Search Ipad Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/Search%20Page%20Ipad.png)/
   [Search Mobile Page](https://raw.githubusercontent.com/LiamD88/cooking-for-you/master/static/wireframes/search%20page%20mobile.png)
+
+# Features
+
+### Home
+The home page has two main features the carousel at the top of the page which although not clickable alternates through images. You then have the clickable recipe categories displayed beneath this which will bring you the recipes for each category. You have the clicable links in the navbar and the social links at the bottom of the page.
+
+### Recipes
+The recipes page has 2 main features, the first being the same categories you would have had from the home page allowing you to click each individual category to get recipes. The second is the form which allows you to add your own recipe if you are logged in. The same navbar and social links are available.
+
+### Recipe Per Category
+There is only one feature on this page, you will have all of the different recipes displayed here on a jumbotron and the only feature is to click the recipe you want to display. The same navbar and social links are available.
+
+### Recipe Ingredients Page
+
+
