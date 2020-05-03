@@ -1,127 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!--This is the head which contains links for bootstrap, fontawesome and css-->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-    <title>Cooking For You</title>
-  </head>
 
-  <body>
-    <!--This is the navbar at the top of the page-->
-    <nav class="navbar navbar-light bg-light nav-footer-bg">
-      <a class="navbar-brand" href="{{ url_for('home_page') }}">
-        <img
-          src="{{ url_for('static', filename='images/logo.png') }}"
-          width="50"
-          height="50"
-          class="d-inline-block align-top"
-          alt="home-logo"
-      /></a>
+<head>
+  <!--This is the head which contains links for bootstrap, fontawesome and css-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <title>Cooking For You</title>
+</head>
 
-      <a
-        class="btn btn-sm btn-outline-secondary ml-auto"
-        type="button"
-        href="{{ url_for('recipe_page') }}"
-        >Recipes</a
-      >
-      {% if 'username' in session %}
-      <a
-        class="btn btn-sm btn-outline-secondary"
-        type="button"
-        href="{{ url_for('logout') }}"
-        >Logout</a
-      >
-      {% else %}
-      <a
-        class="btn btn-sm btn-outline-secondary"
-        type="button"
-        href="{{ url_for('login_page') }}"
-        >Login</a
-      >
-      <a
-        class="btn btn-sm btn-outline-secondary"
-        type="button"
-        href="{{ url_for('register_page') }}"
-        >Register</a
-      >
-      {% endif %}
-    </nav>
+<body>
+  <!--This is the navbar at the top of the page-->
+  <nav class="navbar navbar-light bg-light nav-footer-bg">
+    <a class="navbar-brand" href="{{ url_for('home_page') }}">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" width="50" height="50"
+        class="d-inline-block align-top" alt="home-logo" /></a>
 
-    <!--Jinja templating to allow me to extend my base.html-->
-    {% block content %} {% endblock %}
+    <a class="btn btn-sm btn-outline-secondary ml-auto" type="button" href="{{ url_for('recipe_page') }}">Recipes</a>
+    {% if 'username' in session %}
+    <a class="btn btn-sm btn-outline-secondary" type="button" href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+    <a class="btn btn-sm btn-outline-secondary" type="button" href="{{ url_for('login_page') }}">Login</a>
+    <a class="btn btn-sm btn-outline-secondary" type="button" href="{{ url_for('register_page') }}">Register</a>
+    {% endif %}
+  </nav>
 
-    <!--footer at the bottom of the page-->
-    <div class="footer">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12 nav-footer-bg">
-            <ul class="list-inline social-links d-flex justify-content-end">
-              <li class="list-inline-item">
-                <a
-                  target="_blank"
-                  href="https://www.facebook.com/Cooking-For-You-104655287908058"
-                >
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                  <span class="sr-only">Facebook</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a
-                  target="_blank"
-                  href="https://www.instagram.com/cooking_for_you_88"
-                >
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                  <span class="sr-only">Instagram</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a
-                  target="_blank"
-                  href="https://www.youtube.com/channel/UChmIbHJPXwf1KOKOpHGkzUw?view_as=subscriber"
-                >
-                  <i class="fa fa-youtube" aria-hidden="true"></i>
-                  <span class="sr-only">Youtube</span>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href="https://twitter.com/CookingForYou3">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                  <span class="sr-only">Twitter</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+  <!--Jinja templating to allow me to extend my base.html-->
+  {% block content %} {% endblock %}
+
+  <!--footer at the bottom of the page-->
+  <div class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 nav-footer-bg">
+          <ul class="list-inline social-links d-flex justify-content-end">
+            <li class="list-inline-item">
+              <a target="_blank" href="https://www.facebook.com/Cooking-For-You-104655287908058">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <span class="sr-only">Facebook</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="https://www.instagram.com/cooking_for_you_88">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <span class="sr-only">Instagram</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="https://www.youtube.com/channel/UChmIbHJPXwf1KOKOpHGkzUw?view_as=subscriber">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+                <span class="sr-only">Youtube</span>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://twitter.com/CookingForYou3">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <span class="sr-only">Twitter</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <!--jquery scripts to use in conjunction with bootstrap it allows bootstrap to use javascript functions-->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  </div>
+  <!--jquery scripts to use in conjunction with bootstrap it allows bootstrap to use javascript functions-->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>
