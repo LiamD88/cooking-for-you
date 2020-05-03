@@ -22,7 +22,7 @@
 /* background colours */
 
 .nav-bg {
-  background-color: #e9ecef!important;
+  background-color: #e9ecef !important;
 }
 
 .recipe-bg {
@@ -46,6 +46,7 @@
   padding-top: 5em;
 
 }
+
 .form-pad-2 {
   padding-bottom: 5em;
 }
@@ -77,36 +78,37 @@
 
 /* media queries */
 @media (min-width: 300px) {
-    .carousel .image-size {
+  .carousel .image-size {
     position: relative;
     width: 100%;
     overflow: hidden;
     height: 11em;
-    }
-    }
-    @media (min-width: 768px) {
-    .carousel .image-size {
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel .image-size {
     position: relative;
     width: 100%;
     overflow: hidden;
     height: 22em;
-    }
-    }
-    @media (min-width: 992px) {
-    .carousel .image-size {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    height: 30em;
-    }
-    }
-    @media (min-width: 1025px) {
-    .carousel .image-size {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    height: 30em;
-    }
-    }
-    
+  }
+}
 
+@media (min-width: 992px) {
+  .carousel .image-size {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 30em;
+  }
+}
+
+@media (min-width: 1025px) {
+  .carousel .image-size {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 30em;
+  }
+}
