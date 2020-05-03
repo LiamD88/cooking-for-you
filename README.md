@@ -58,13 +58,13 @@ Below are the links for wireframes, one was created for each device, mobile, tab
 
 # Features
 
-### Home
+### Home Page
 The home page has two main features the carousel at the top of the page which although not clickable alternates through images. You then have the clickable recipe categories displayed beneath this which will bring you the recipes for each category. You have the clicable links in the navbar and the social links at the bottom of the page.
 
-### Recipes
+### Recipes Page
 The recipes page has 3 main features, the first being the same categories you would have had from the home page allowing you to click each individual category to get recipes. The second is the form which allows you to add your own recipe if you are logged in. The third is the small logo above the form you fill in. The same navbar and social links are available.
 
-### Recipe Per Category
+### Recipe Per Category Page
 There is only one feature on this page, you will have all of the different recipes displayed here on a jumbotron and the only feature is to click the recipe you want to display. The same navbar and social links are available.
 
 ### Recipe Ingredients Page
@@ -104,3 +104,6 @@ The register page is practically identical to the login page, 2 main feautres. A
  * [CSS Validator](https://jigsaw.w3.org/css-validator/) This allowed me to validate my CSS.
  * [Auto Prefixer](https://autoprefixer.github.io/) This was used to check if my CSS was valid on all browsers.
 
+# Testing
+
+[TESTING.md](https://github.com/LiamD88/cooking-for-you/blob/master/TESTING.md)This is a link to the testing done on this website.
