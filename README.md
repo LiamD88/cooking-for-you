@@ -131,6 +131,8 @@ If you wish to deploy locally and clone the repository. To do this you would
 
 * [Recipes](https://easyfood.ie/) This is where I got the recipes for my site.
 * [Login/Register Form](https://youtu.be/vVx1737auSE) This helped me with hashing my password for my registration form
+* The footer social media links code was taken from a lesson the code institure provided us for the first project, works quite well so used it again.
+
   
 ## Media
 
