@@ -9,7 +9,7 @@
    * Easy to sign up, and get around the site.
    * Its easy to find the recipes and add my own, I wasn't expecting it to be so easy to add my own.
 
-2. As a chef who well used to recipes and how complicated they can get this website doesnt appeal to me too mcuh. I'm looking for something a lot more detailed and specific.
+2. As a chef who is well used to recipes and how complicated they can get this website doesnt appeal to me too much. I'm looking for something a lot more detailed and specific.
    
    * Website is easy to move around but not specific enough for me with the recipes.
    * I do like the fact I can add my own recipes for other people without too much work.
@@ -41,12 +41,12 @@
 
     * The carousel was tested on developer tools to ensure it was responsive on all devices.
 
-3. Clickables Card Links
+3. Clickable Card Links
 
     * The cards where all tested to be responsive on developer tools for all devices.
     * The links under each card were tested to ensure they brought you to the correct page.
 
-4. Test Under Cards
+4. Text Under Cards
 
     * The text was tested on developer tools to ensure it was responsive on all devices.
 
