@@ -21,8 +21,12 @@
 
 /* background colours */
 
-.carousel-bg {
-  background-color: #e9ecef;
+.nav-bg {
+  background-color: #e9ecef!important;
+}
+
+.recipe-bg {
+  background-color: #f5b75a;
 }
 
 /* delete pages */
@@ -50,7 +54,7 @@
 /* footer links */
 
 .social-links {
-  padding-top: 50px;
+  padding-top: 10px;
   padding-left: 280px;
   font-size: 25px;
   letter-spacing: 3px;
@@ -68,6 +72,7 @@
 .social-links li a i:hover {
   color: #000000;
 }
+
 
 
 /* media queries */
