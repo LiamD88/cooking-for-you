@@ -107,3 +107,34 @@ The register page is practically identical to the login page, 2 main feautres. A
 # Testing
 
 [TESTING.md](https://github.com/LiamD88/cooking-for-you/blob/master/TESTING.md)This is a link to the testing done on this website.
+
+# Deployment
+
+This project was created with [VSCode](https://code.visualstudio.com). In order to deploy the project I have listed the steps I have taken below.
+
+* The code was written in my local repository on VS code and then pushed to github.
+* I had to create an app in Heroku under the same name as my github repository.
+* In Heroku the app can be linked to your github repository in the settings tab. The Heroku app would automatically build and deploy each time the github repository was updated.
+* The app was then available via a clickable link on the heroku site.
+
+If you wish to deploy locally and clone the repository. To do this you would 
+
+* Go to the main page of the repository and click clone/download, this will be located under the repository name.
+* In the section clone with HTTPS copy the clone URL and open the terminal on your IDE.
+* Change the working directory to the location you wish your cloned directory to be placed.
+* Type git clone and paste in your URL you had copied earlier.
+* Now press enter and your clone will be created.
+
+# Credits
+
+## Content
+
+* [Recipes](https://easyfood.ie/) This is where I got the recipes for my site.
+* [Login/Register Form](https://youtu.be/vVx1737auSE) This helped me with hashing my password for my registration form
+  
+## Media
+
+* All images on the site are taken from google.
+
+## Acknowledgements
+* My mentor [Reuben Ferrante](https://github.com/arex18),for his advice on the site and what was needed to complete.
