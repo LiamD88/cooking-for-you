@@ -186,7 +186,8 @@
     * The footers was tested to check if all the links were working correctly.
     * Also tested to ensure the colour would change for the link when hovered over.
 
-### Login Page
+
+### Login Page
 
 1. The Navigation Bar
 
