@@ -1,44 +1,76 @@
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
 
 <div class="container">
-  <!--Form to delete your recipes-->
+  <!--This is the flash message at the top of the page-->
   <div class="row">
-
-    <div class="col-12 text-center">
-      <img src="{{ url_for('static', filename='images/chef.jpg') }}" width="250" height="250"
-        class="d-inline-block align-top" alt="">
+    <div class="col-12">
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <span>{{ message }}</span>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
     </div>
   </div>
-  <div class="row">
-    <div class="col-12 text-center">
-      <h1>Are you sure you want to delete the recipe?</h1>
 
+  <div class="container">
+    <!--Form to delete your recipes-->
+    <div class="row">
+      <div class="col-12 text-center">
+        <img
+          src="{{ url_for('static', filename='images/chef.jpg') }}"
+          width="250"
+          height="250"
+          class="d-inline-block align-top"
+          alt="chef-logo"
+        />
+      </div>
     </div>
-
-  </div>
-  <div class="row">
-    <div class="col-12 text-center">
-      <h3>It's gone forever!!!</h3>
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>Are you sure you want to delete the recipe?</h1>
+      </div>
     </div>
-  </div>
-  <!--Form to delete your recipes-->
-  <div class="row">
-    <div class="col-12 text-center ">
-      <form method="POST" action="{{url_for('delete_recipe_vegetarian', vegetarian_id=vegetarian._id)}}">
-        <div class="col-auto my-1 return-button">
-          <a href="{{ url_for('recipe_page') }}" class="badge-pill badge-primary btn">Take Me Back To The Recipes</a>
-        </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3>It's gone forever!!!</h3>
+      </div>
+    </div>
+    <!--Form to delete your recipes-->
+    <div class="row">
+      <div class="col-12 text-center">
+        <form
+          method="POST"
+          action="{{url_for('delete_recipe_vegetarian', vegetarian_id=vegetarian._id)}}"
+        >
+          <div class="col-auto my-1 return-button">
+            <a
+              href="{{ url_for('recipe_page') }}"
+              class="badge-pill badge-primary btn"
+              >Take Me Back To The Recipes</a
+            >
+          </div>
 
-
-
-        <div class="col-auto my-1 delete-button"> <button type="submit"
-            class="col-auto my-1 btn btn-primary badge-pill">Delete</button>
-        </div>
-
-      </form>
+          <div class="col-auto my-1 delete-button">
+            <button
+              type="submit"
+              class="col-auto my-1 btn btn-primary badge-pill"
+            >
+              Delete
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
-
 {% endblock %}

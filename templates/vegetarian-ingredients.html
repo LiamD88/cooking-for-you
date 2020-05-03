@@ -1,11 +1,11 @@
-{% extends 'base.html' %} <!--This allows me to extend the base.html to this page-->
+{% extends 'base.html' %}
+<!--This allows me to extend the base.html to this page-->
 
-
-{% block content %} <!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
-
-
+{% block content %}
+<!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
 
 <div class="container">
+  <!--jumbotron at top of page-->
   <div class="row">
     <div class="col-12">
       <div class="jumbotron jumbotron-fluid recipe-bg">
@@ -16,34 +16,53 @@
     </div>
   </div>
 
-<div class="row">
-  <div class="col-12 text-center">
-    <img src="{{ url_for('static', filename='images/chef.jpg') }}" width="250" height="250" class="d-inline-block align-top" alt="">
-  </div>
-</div>
-
-
   <div class="row">
-    <div class="col-12">
-
-      <h4>Ingredients:</h4><p>{{ recipes.ingredients|capitalize }}</p><br>
-      <h4>How To Cook:</h4><p>{{ recipes.how_to_cook|capitalize }}</p><br>
-      <h4>Additional Notes:</h4><p>{{ recipes.additional_notes|capitalize }}</p>
+    <!--chef logo image-->
+    <div class="col-12 text-center">
+      <img
+        src="{{ url_for('static', filename='images/chef.jpg') }}"
+        width="250"
+        height="250"
+        class="d-inline-block align-top"
+        alt="chef-logo"
+      />
     </div>
   </div>
 
- <div class="row">
+  <div class="row">
+    <!--recipe details-->
+    <div class="col-12">
+      <h4>Ingredients:</h4>
+      <p>{{ recipes.ingredients|capitalize }}</p>
+      <br />
+      <h4>How To Cook:</h4>
+      <p>{{ recipes.how_to_cook|capitalize }}</p>
+      <br />
+      <h4>Additional Notes:</h4>
+      <p>{{ recipes.additional_notes|capitalize }}</p>
+    </div>
+  </div>
+  <!--edit/delete buttons-->
+  <div class="row">
     <div class="col-12">
       {% if 'username' in session %}
-      <a class="btn btn-primary badge-pill" href="{{ url_for('edit_recipe_vegetarian', vegetarian_id=vegetarian._id) }}" role="button">Edit!</a>
+      <a
+        class="btn btn-primary badge-pill"
+        href="{{ url_for('edit_recipe_vegetarian', vegetarian_id=vegetarian._id) }}"
+        role="button"
+        >Edit!</a
+      >
 
-  
-    <a class="btn btn-primary badge-pill" href="{{ url_for('delete_recipe_vegetarian', vegetarian_id=vegetarian._id) }}" role="button">Delete!</a>
- {% else %}
-     <button class="btn disabled btn-primary badge-pill">Edit!</button>
-     <button class="btn disabled btn-primary badge-pill">Delete!</button>
-     {% endif %}
-    
+      <a
+        class="btn btn-primary badge-pill"
+        href="{{ url_for('delete_recipe_vegetarian', vegetarian_id=vegetarian._id) }}"
+        role="button"
+        >Delete!</a
+      >
+      {% else %}
+      <button class="btn disabled btn-primary badge-pill">Edit!</button>
+      <button class="btn disabled btn-primary badge-pill">Delete!</button>
+      {% endif %}
     </div>
   </div>
   <div class="row">
@@ -56,5 +75,3 @@
 </div>
 
 {% endblock %}
-
-

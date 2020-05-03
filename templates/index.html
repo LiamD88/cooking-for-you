@@ -1,82 +1,129 @@
-{% extends 'base.html' %} <!--This allows me to extend the base.html to this page-->
+{% extends 'base.html' %}
+<!--This allows me to extend the base.html to this page-->
 
-{% block content %} <!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
+{% block content %}
+<!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
 
-
-
-<section>  <!--Carousel image which displays the main photos on the home page-->
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
-          <div class="carousel-inner image-size">
-            <div class="carousel-item active">
-              <img src="{{ url_for('static', filename='images/carousel-image-1.jpg') }}" class="d-block w-100"
-                alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="{{ url_for('static', filename='images/carousel-image-2.jpg') }}" class="d-block w-100"
-                alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="{{ url_for('static', filename='images/carousel-image-3.jpg') }}" class="d-block w-100"
-                alt="...">
-            </div>
+<!--Carousel image which displays the main photos on the home page-->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div
+        id="carouselExampleSlidesOnly"
+        class="carousel slide carousel-fade"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner image-size">
+          <div class="carousel-item active">
+            <img
+              src="{{ url_for('static', filename='images/carousel-image-1.jpg') }}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{{ url_for('static', filename='images/carousel-image-2.jpg') }}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{{ url_for('static', filename='images/carousel-image-3.jpg') }}"
+              class="d-block w-100"
+              alt="..."
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-</section>
-<section>    <!--The four images at the bottom of the page to link to the recipe pages-->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-3 home-images">
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/meat-link.jpg') }}" class="card-img-top" alt="...">
-        </div>
-        <div class="text-center"><a href="{{ url_for('meat_recipes') }}" class="badge-pill badge-primary">Meat</a>
-        </div>
+<!--The four images at the bottom of the page to link to the recipe pages-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 home-images">
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/meat-link.jpg') }}"
+          class="card-img-top"
+          alt="meat-image"
+        />
       </div>
-      <div class="col-sm-3 home-images">
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/poultry-link.jpg') }}" class="card-img-top" alt="...">
-        </div>
-        <div class="text-center"><a href="{{ url_for('poultry_recipes') }}"
-            class="badge-pill badge-primary">Poultry</a></div>
+      <div class="text-center">
+        <a href="{{ url_for('meat_recipes') }}" class="badge-pill badge-primary"
+          >Meat</a
+        >
       </div>
-      <div class="col-sm-3 home-images">
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/pasta-link.jpg') }}" class="card-img-top" alt="...">
-        </div>
-        <div class="text-center"><a href="{{ url_for('pasta_recipes') }}" class="badge-pill badge-primary">Pasta</a>
-        </div>
+    </div>
+    <div class="col-sm-3 home-images">
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/poultry-link.jpg') }}"
+          class="card-img-top"
+          alt="poultry-image"
+        />
       </div>
-      <div class="col-sm-3 home-images">
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/vegetarian-link.jpg') }}" class="card-img-top" alt="...">
-        </div>
-        <div class="text-center"><a href="{{ url_for('vegetarian_recipes') }}"
-            class="badge-pill badge-primary">Vegetarian</a></div>
+      <div class="text-center">
+        <a
+          href="{{ url_for('poultry_recipes') }}"
+          class="badge-pill badge-primary"
+          >Poultry</a
+        >
+      </div>
+    </div>
+    <div class="col-sm-3 home-images">
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/pasta-link.jpg') }}"
+          class="card-img-top"
+          alt="pasta-image"
+        />
+      </div>
+      <div class="text-center">
+        <a
+          href="{{ url_for('pasta_recipes') }}"
+          class="badge-pill badge-primary"
+          >Pasta</a
+        >
+      </div>
+    </div>
+    <div class="col-sm-3 home-images">
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/vegetarian-link.jpg') }}"
+          class="card-img-top"
+          alt="egetarian-image"
+        />
+      </div>
+      <div class="text-center">
+        <a
+          href="{{ url_for('vegetarian_recipes') }}"
+          class="badge-pill badge-primary"
+          >Vegetarian</a
+        >
       </div>
     </div>
   </div>
+</div>
 
-  <div class="container"> <!--This is the text at the bottom of the home page -->
-    <div class="row">
-      <div class="col-12">
-        <p class="text-center home-text home-text-2">You might find at home, you do all the cooking, but come and cook
-          with us and you will
-          see we can do the</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h2 class="text-center home-text">Cooking For You!</h2>
-      </div>
+<div class="container">
+  <!--This is the text at the bottom of the home page -->
+  <div class="row">
+    <div class="col-12">
+      <p class="text-center home-text home-text-2">
+        You might find at home, you do all the cooking, but come and cook with
+        us and you will see we can do the
+      </p>
     </div>
   </div>
-</section>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center home-text">Cooking For You!</h2>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

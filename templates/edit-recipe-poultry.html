@@ -1,13 +1,20 @@
-{% extends 'base.html' %} <!--This allows me to extend the base.html to this page-->
+{% extends 'base.html' %}
+<!--This allows me to extend the base.html to this page-->
 
+{% block content %}
 
-{% block content %} 
+<div class="container">
+  <!--Image at top of page and text below-->
 
-<div class="container"> <!--Text for adding recipes below-->
-  
   <div class="row">
     <div class="col-12 text-center">
-      <img src="{{ url_for('static', filename='images/chef.jpg') }}" width="250" height="250" class="d-inline-block align-top" alt="">
+      <img
+        src="{{ url_for('static', filename='images/chef.jpg') }}"
+        width="250"
+        height="250"
+        class="d-inline-block align-top"
+        alt="chef-logo"
+      />
     </div>
   </div>
   <div class="row">
@@ -15,13 +22,22 @@
       <h3><u>Edit The Recipe Below</u></h3>
     </div>
   </div>
- <!--Form to edit your recipes-->
-    <div class="row">
-      <div class="col-12">
-        <form method="POST" action="{{url_for('edit_recipe_poultry', poultry_id=poultry._id)}}">
-          <div class="col-auto my-1">
-          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="category">
+  <!--Form to edit your recipes-->
+  <div class="row">
+    <div class="col-12">
+      <form
+        method="POST"
+        action="{{url_for('edit_recipe_poultry', poultry_id=poultry._id)}}"
+      >
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect"
+            >Preference</label
+          >
+          <select
+            class="custom-select mr-sm-2"
+            id="inlineFormCustomSelect"
+            name="category"
+          >
             <option selected>Category...</option>
             <option value="meat">Meat</option>
             <option value="poultry">Poultry</option>
@@ -29,34 +45,50 @@
             <option value="vegetarian">Vegetarian</option>
           </select>
         </div>
-          <div class="col-auto my-1 form-group">
-            <label for="formGroupExampleInput2">Name</label>
-            <input type="text" class="form-control" name="name" placeholder="Recipe Name?">
-          </div>
-          <div class="col-auto my-1 form-group">
-            <label for="formGroupExampleInput">Ingredients</label>
-            <input type="text" class="form-control" name="ingredients" placeholder="Enter Ingredients">
-          </div>
-          <div class="col-auto my-1 form-group">
-            <label for="formGroupExampleInput2">How To Cook</label>
-            <input type="text" class="form-control" name="how_to_cook" placeholder="How Do You Cook It?">
-          </div>
-          <div class="col-auto my-1 form-group">
-            <label for="formGroupExampleInput2">Additional Notes</label>
-            <input type="text" class="form-control" name="additional_notes" placeholder="Anything Extra To Add?">
-          </div>
-          <div class="col-auto my-1"> <button type="submit"
-              class="col-auto my-1 btn btn-primary btn-block">Submit</button>
-          </div>
-  
-        </form>
-      </div>
+        <div class="col-auto my-1 form-group">
+          <label for="formGroupExampleInput2">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Recipe Name?"
+          />
+        </div>
+        <div class="col-auto my-1 form-group">
+          <label for="formGroupExampleInput">Ingredients</label>
+          <input
+            type="text"
+            class="form-control"
+            name="ingredients"
+            placeholder="Enter Ingredients"
+          />
+        </div>
+        <div class="col-auto my-1 form-group">
+          <label for="formGroupExampleInput2">How To Cook</label>
+          <input
+            type="text"
+            class="form-control"
+            name="how_to_cook"
+            placeholder="How Do You Cook It?"
+          />
+        </div>
+        <div class="col-auto my-1 form-group">
+          <label for="formGroupExampleInput2">Additional Notes</label>
+          <input
+            type="text"
+            class="form-control"
+            name="additional_notes"
+            placeholder="Anything Extra To Add?"
+          />
+        </div>
+        <div class="col-auto my-1">
+          <button type="submit" class="col-auto my-1 btn btn-primary btn-block">
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   </div>
-
-
-
+</div>
 
 {% endblock %}
-
-

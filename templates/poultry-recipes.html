@@ -1,29 +1,32 @@
-{% extends 'base.html' %} <!--This allows me to extend the base.html to this page-->
+{% extends 'base.html' %}
+<!--This allows me to extend the base.html to this page-->
 
-{% block content %} <!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
+{% block content %}
+<!-- this is the block content that will go between the the same jinja block I have on my base.html and display what I have below-->
 
-
-{% for poultry in poultrys %} <!--for loop to allow me to iterate through the items in my mongodb database-->
+{% for poultry in poultrys %}
+<!--for loop to allow me to iterate through the items in my mongodb database-->
 
 <div class="container">
   <div class="row">
-  <!--containter to display items for the moment this will change-->
+    <!--Jumbotron-->
     <div class="col-12">
       <div class="jumbotron img">
-        <h1 class="display-4"> {{ poultry.name }}</h1>
-        <hr class="my-4">
-        <p>Inside is a delightful recipe for {{ poultry.name }}, you can even make adjustments if you like!</p>
-        <a class="btn btn-primary btn-lg" href="{{ url_for('poultry_ingredients', poultry_id=poultry._id) }}" role="button">Click For Recipe!</a>
-      </div>
-        </div>
+        <h1 class="display-4">{{ poultry.name }}</h1>
+        <hr class="my-4" />
+        <p>
+          Inside is a delightful recipe for {{ poultry.name }}, you can even
+          make adjustments if you like!
+        </p>
+        <a
+          class="btn btn-primary btn-lg"
+          href="{{ url_for('poultry_ingredients', poultry_id=poultry._id) }}"
+          role="button"
+          >Click For Recipe!</a
+        >
       </div>
     </div>
+  </div>
+</div>
 
-{% endfor %}
-
-
-
-
-
-
-{% endblock %}
+{% endfor %} {% endblock %}
