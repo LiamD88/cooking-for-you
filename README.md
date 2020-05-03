@@ -10,7 +10,7 @@ I wanted to keep the design minimal enough for the user, as it is aimed at peopl
 
 The home page has a navbar with the home logo to the left and options to register,login or recipes. I have a carousel at the top of the page with colourful images of people and food for a nice visual appearance. Under this there are four bootstrap cards which have 4 main categories, meat, poulty, pasta and vegetarian. This simplifies the experience for the home user and allows them to click and go to the recipes of each category. Below is some text just explaining what we do followed by some social media links.
 
-The recipes page again keeping to a minimal you will have the same 4 categories from the home page displayed at the top that you can click into for a recipes. Below this is a logo of a chef with food and the form to add your own recipes, the user will only be able to add a recipe to the same categories we have at the moment and will be unable to add a recipe unless logged in. Navbar and social links remain the same.
+The recipes page again keeping to a minimal you will have the same 4 categories from the home page displayed at the top that you can click into for a recipe. Below this is a logo of a chef with food and the form to add your own recipes, the user will only be able to add a recipe to the same categories we have at the moment and will be unable to add a recipe unless logged in. Navbar and social links remain the same.
 
 The login page, keeping up the same theme from the last page also has the chef logo at the top of the page and a form to log in with your details, navbar and social links kept the same. This is very easy for any user to login.
 
@@ -24,7 +24,7 @@ The edit recipes page will keep the same form as the recipes page to make sure t
 
 The delete recipe page again very minimal design, some text to warn the client if they delete the recipe there is no going back, with two buttons. One will bring you back to the recipes page. The other will delete the recipe.
 
-The colour scheme was kept light and minimal aswell. A small grey scale for the navbar, the body an footer white, with the social links a grey scale. The brightest thing is the carousel and the jumbotron on the recipe page. 
+The colour scheme was kept light and minimal as well. A small grey scale for the navbar, the body an footer white, with the social links a grey scale. The brightest thing is the carousel and the jumbotron on the recipe page. 
 
 ## User Stories
 ---
@@ -68,13 +68,13 @@ The recipes page has 3 main features, the first being the same categories you wo
 There is only one feature on this page, you will have all of the different recipes displayed here on a jumbotron and the only feature is to click the recipe you want to display. The same navbar and social links are available.
 
 ### Recipe Ingredients Page
-This page has 4 main features, the first being the same jumbotron from categories page, which displays the recipe name. For the second you will then have the same chef logo seen throughtout site and the third feature being the recipe ingredients, instructions and additional notes. The final feature is the edit and delete buttons at the bottom of the page which will be clickable if you are logged in. the same navbar and social links are available.
+This page has 4 main features, the first being the same jumbotron from categories page, which displays the recipe name. For the second you will then have the same chef logo seen through out site and the third feature being the recipe ingredients, instructions and additional notes. The final feature is the edit and delete buttons at the bottom of the page which will be clickable if you are logged in. the same navbar and social links are available.
 
 ### Edit Recipe Page
-This page has 2 main features. The first being the chef logo seen throughout the site and the second being the same recipe form you fill in to add a recipes from earlier. The same navbar and social links are available.
+This page has 2 main features. The first being the chef logo seen throughout the site and the second being the same recipe form you fill in to add a recipe from earlier. The same navbar and social links are available.
 
 ### Delete Recipe Page
-This page has 2 main features, the first is the smae chef logo displayed at the top of the page and the second is there are two buttons below this, one will allow you to delete the recipe, the other will bring you back to the recipe page. The same navbar and social links are available.
+This page has 2 main features, the first is the same chef logo displayed at the top of the page and the second is there are two buttons below this, one will allow you to delete the recipe, the other will bring you back to the recipe page. The same navbar and social links are available.
 
 ### Login Page
 The login page has 2 main features, the first being again the same chef logo seen throughout the site. The second is a simple form you fill in to log into the site. The same navbar and social links are available.
