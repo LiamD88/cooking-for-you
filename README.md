@@ -26,4 +26,15 @@ The delete recipe page again very minimal design, some text to warn the client i
 
 The colour scheme was kept light and minimal aswell. A small grey scale for the navbar, the body an footer white, with the social links a grey scale. The brightest thing is the carousel and the jumbotron on the recipe page. 
 
-# User Stories
+## User Stories
+---
+The site is designed for the most simple of users to have access to recipes and for anybody to log on and share the recipes they have with each other. These are some of the user stories related to these people.
+
+1. As an eldery user who isn't great on computers I found this site quite easy to use. It was such an easy process to sign up and add some of the recipes I've put together over the years. I like the fact the recipes are split into four main categories and it's not too complicated.
+2. As a chef I find this website is ok if your just looking for some easy information on recipes, I would prefer a lot more categories, it doesn't really suit my needs as I need to get very specific with the recipes. It is simple enough to sign up so I will add a couple of my recipes while I'm here!
+3. As somebody who is cooking a meal this evening for that special someone I found this site perfect. No messing around, I was able to select the category I wanted, found the perfect recipe and I don't need to sign up as I'm not adding or deleting anything.
+4. As somebody who is really terrible at cooking, I like this site. I find other ones are too complicated, this is great for me, there is a couple of the main categories most people would know and the instructions are really easy to follow. I won't now as I'm only starting but I might add my own recipes later! 
+5. As a food critic, I sometimes enjoy looking up these recipe sites as the some of the people at home can have great recipes in comparison to the restaurants! I like the fact I will receive a monthly newsletter with recipes, I'll sign up here and it's simple enough to do.
+
+## Wireframes
+---
