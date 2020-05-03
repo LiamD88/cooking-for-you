@@ -62,11 +62,45 @@ Below are the links for wireframes, one was created for each device, mobile, tab
 The home page has two main features the carousel at the top of the page which although not clickable alternates through images. You then have the clickable recipe categories displayed beneath this which will bring you the recipes for each category. You have the clicable links in the navbar and the social links at the bottom of the page.
 
 ### Recipes
-The recipes page has 2 main features, the first being the same categories you would have had from the home page allowing you to click each individual category to get recipes. The second is the form which allows you to add your own recipe if you are logged in. The same navbar and social links are available.
+The recipes page has 3 main features, the first being the same categories you would have had from the home page allowing you to click each individual category to get recipes. The second is the form which allows you to add your own recipe if you are logged in. The third is the small logo above the form you fill in. The same navbar and social links are available.
 
 ### Recipe Per Category
 There is only one feature on this page, you will have all of the different recipes displayed here on a jumbotron and the only feature is to click the recipe you want to display. The same navbar and social links are available.
 
 ### Recipe Ingredients Page
+This page has 4 main features, the first being the same jumbotron from categories page, which displays the recipe name. For the second you will then have the same chef logo seen throughtout site and the third feature being the recipe ingredients, instructions and additional notes. The final feature is the edit and delete buttons at the bottom of the page which will be clickable if you are logged in. the same navbar and social links are available.
 
+### Edit Recipe Page
+This page has 2 main features. The first being the chef logo seen throughout the site and the second being the same recipe form you fill in to add a recipes from earlier. The same navbar and social links are available.
+
+### Delete Recipe Page
+This page has 2 main features, the first is the smae chef logo displayed at the top of the page and the second is there are two buttons below this, one will allow you to delete the recipe, the other will bring you back to the recipe page. The same navbar and social links are available.
+
+### Login Page
+The login page has 2 main features, the first being again the same chef logo seen throughout the site. The second is a simple form you fill in to log into the site. The same navbar and social links are available.
+
+### Register page
+The register page is practically identical to the login page, 2 main feautres. Again the chef logo at the top of the page and a simple form you can use to register for the site. The same navbar and social links are available.
+
+### Future Features
+* The ability to upload photos with your recipes.
+* The option to search for recipes based on keywords or recipe titles.
+* A monthly winner of best recipe voted for by users that will be displayed on the site each month.
+* The possibility of having people do a live cooking session on the site streamed to all registered users.
+
+# Technologies Used 
+
+* HTML - This was used to create the site and the pages for the site.
+* CSS - This was used to style certain aspects of the site.
+* Python - This is the main language used to create the backend of the website in order for users to register recipes, and usernames etc.
+* [Bootstrap](https://getbootstrap.com/) Bootstrap was used to create the structure of the site using its grid system and to make the site responsive on all devices.
+* [JQuery](https://jquery.com/) This was used with bootstrap to allow you to place certain elements and functionality on your page.
+ * [GitHub](https://github.com/) This allowed me to upload my local repository onto a remote server which was linked to Heroku to build which would push the latest changes to the version which was then built on Heroku.
+ * [Heroku](https://www.heroku.com/) This is a site which allows you to deploy this type of application.
+ * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_emea_ireland_search_brand_atlas_desktop&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&gclid=Cj0KCQjw17n1BRDEARIsAFDHFezlrO5NtTgspt4C5sBbcQFtKOgayip8q9zG4khCI6lM1laGQsEjRoUaAuvREALw_wcB) This is where I was able to host my database and connect it to my project.
+ * [VSCode](https://code.visualstudio.com) I used this as my ide. The local repository along with all my code was stored here.
+ * [Google Fonts](https://fonts.google.com/) This page allowed me import a font style for my project.
+ * [HTML Validator](https://validator.w3.org/) This allowed me to validate my HTML.
+ * [CSS Validator](https://jigsaw.w3.org/css-validator/) This allowed me to validate my CSS.
+ * [Auto Prefixer](https://autoprefixer.github.io/) This was used to check if my CSS was valid on all browsers.
 
